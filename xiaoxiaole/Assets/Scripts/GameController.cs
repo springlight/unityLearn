@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -13,13 +14,28 @@ public class GameController : MonoBehaviour
     public AudioClip matchClip;
     public AudioSource audioSource;
     public AudioClip wrongClip;
+    public Text txt;
+    public GameObject successPanel;
+    private int cnt = 0;
+    public SpriteRenderer[] bgs;
+
+    public SpriteRenderer bg;
 	// Use this for initialization
 	void Start ()
     {
+        ChangeBg();
         candyArr = new ArrayList();
         InitCandys();
+
 	}
-	//初始化
+    void ChangeBg()
+    {
+
+        bg.gameObject.SetActive(false);
+        bg = bgs[Random.Range(0, bgs.Length)];
+        bg.gameObject.SetActive(true);
+    }
+	//初始化糖果
     private void InitCandys()
     {
         for(int rIdx = 0; rIdx < rowNum; rIdx++)
@@ -45,6 +61,7 @@ public class GameController : MonoBehaviour
         c.rowIdx = rIdx;
         c.columnIdx = cIdx;
         c.game = this;
+        //更新位置
         c.UpdatePos();
         return c;
     }
@@ -80,21 +97,19 @@ public class GameController : MonoBehaviour
     /// <param name="c"></param>
     private void Remove(Candy c)
     {
-        AddEffect(c.transform.position);
-        audioSource.PlayOneShot(explodeClip);
+        Vector3 pos = c.transform.position;
+        int cIdx = c.columnIdx;
+        int rIdx = c.rowIdx + 1;
         //删除自己
         c.Dispose();
-       
-        int cIdx = c.columnIdx;
-        Debug.LogErrorFormat("选中的列数---》{0}/行数-->{1}", cIdx, c.rowIdx);
-
+        AddEffect(pos);
+        audioSource.PlayOneShot(explodeClip);
         //遍历选中的candy同列，上面所有行的candy，每个都下移一格
-        for (int rIdx = c.rowIdx + 1; rIdx <rowNum; rIdx++)
+        for (; rIdx <rowNum; rIdx++)
         {
             Candy c2 = GetCandy(rIdx, cIdx);
             //y下移一行
             c2.rowIdx--;
-            // c2.UpdatePos();
             c2.TweenToPos();
             SetCandy(rIdx - 1, cIdx, c2);
         }
@@ -110,7 +125,6 @@ public class GameController : MonoBehaviour
     private Candy curCany;
     public void Select(Candy c)
     {
-        //Remove(c);return;
         if (curCany == null)
         {
             curCany = c;
@@ -154,7 +168,7 @@ public class GameController : MonoBehaviour
     private void Swap(Candy c1,Candy c2)
     {
         audioSource.PlayOneShot(swapClip);
-        SetCandy(c1.rowIdx, c2.columnIdx, c2);
+        SetCandy(c1.rowIdx, c1.columnIdx, c2);
         SetCandy(c2.rowIdx, c2.columnIdx, c1);
         int r = c1.rowIdx;
         int c = c1.columnIdx;
@@ -164,9 +178,6 @@ public class GameController : MonoBehaviour
         c2.rowIdx = r;
         c2.columnIdx = c;
         c2.TweenToPos();
-        //交换完成后置空当前选择
-
-
 
     }
     /// <summary>
@@ -190,15 +201,18 @@ public class GameController : MonoBehaviour
         {
             for (int cIdx = 0; cIdx < columnNum - 2; cIdx++)
             {
+                Candy c0 = GetCandy(rowIdx, cIdx);
+                Candy c1 = GetCandy(rowIdx, cIdx + 1);
+                Candy c2 = GetCandy(rowIdx, cIdx + 2);
                 //判断第一个和第二个是否一样，以及第二个第三个是否一样
-                if (GetCandy(rowIdx, cIdx).type == GetCandy(rowIdx, cIdx + 1).type &&
-                   GetCandy(rowIdx, cIdx + 1).type == GetCandy(rowIdx, cIdx + 2).type)
+                if (c0.type == c1.type &&
+                   c1.type == c2.type)
                 {
                     audioSource.PlayOneShot(matchClip);
-                    Debug.LogErrorFormat("列数--{0}/{1}/{2}", cIdx, cIdx + 1, cIdx + 2);
-                    AddMath(GetCandy(rowIdx, cIdx));
-                    AddMath(GetCandy(rowIdx, cIdx + 1));
-                    AddMath(GetCandy(rowIdx, cIdx + 2));
+                   
+                    AddMath(c0);
+                    AddMath(c1);
+                    AddMath(c2);
                     result = true;
                 }
             }
@@ -218,15 +232,18 @@ public class GameController : MonoBehaviour
         {
             for (int rowIdx = 0; rowIdx < rowNum - 2; rowIdx++)
             {
+                Candy c0 = GetCandy(rowIdx, cIdx);
+                Candy c1 = GetCandy(rowIdx + 1, cIdx);
+                Candy c2 = GetCandy(rowIdx + 2, cIdx);
                 //判断第一个和第二个是否一样，以及第二个第三个是否一样
-                if (GetCandy(rowIdx, cIdx).type == GetCandy(rowIdx + 1, cIdx).type &&
-                   GetCandy(rowIdx +1, cIdx).type == GetCandy(rowIdx + 2, cIdx).type)
+                if (c0.type == c1.type &&
+                   c1.type == c2.type)
                 {
                     audioSource.PlayOneShot(matchClip);
                     // Debug.LogErrorFormat("列数--{0}/{1}/{2}", cIdx, cIdx + 1, cIdx + 2);
-                    AddMath(GetCandy(rowIdx, cIdx));
-                    AddMath(GetCandy(rowIdx + 1, cIdx));
-                    AddMath(GetCandy(rowIdx + 2, cIdx));
+                    AddMath(c0);
+                    AddMath(c1);
+                    AddMath(c2);
                     result = true;
                 }
             }
@@ -235,13 +252,24 @@ public class GameController : MonoBehaviour
     }
 
     private ArrayList mathes;
+    /// <summary>
+    /// 加入匹配列表
+    /// </summary>
+    /// <param name="c"></param>
     private void AddMath(Candy c)
     {
         if(mathes == null)
             mathes = new ArrayList();
         int idx = mathes.IndexOf(c);//判断是存在
         if (idx == -1)
+        {
             mathes.Add(c);
+        }
+        else
+        {
+            //Debug.LogError("匹配池中已经存在--->" + c.GetHashCode());
+        }
+          
     }
     /// <summary>
     /// 删除所有可以消除的candy
@@ -256,9 +284,25 @@ public class GameController : MonoBehaviour
             Remove(tmp);
             
         }
+        cnt++;
+        if (cnt % 10 == 0 && cnt != 0)
+        {
+            successPanel.SetActive(true);
+            StartCoroutine(Success());
+            ChangeBg();
+        }
+        txt.text = cnt.ToString();
+        
         mathes.Clear();
         //第一次检测
         StartCoroutine(WaitAndCheck());
+    }
+    IEnumerator Success()
+    {
+       
+        yield return new WaitForSeconds(2.5f);
+      //  txt.text = cnt.ToString();
+        successPanel.gameObject.SetActive(false);
     }
     /// <summary>
     /// 检测是否需要删除
@@ -266,7 +310,7 @@ public class GameController : MonoBehaviour
     /// <returns></returns>
     IEnumerator WaitAndCheck()
     {
-        yield return new WaitForSeconds(0.5F);
+        yield return new WaitForSeconds(1.0F);
         if (CheckMathes())
         {
             RemoveMathes();

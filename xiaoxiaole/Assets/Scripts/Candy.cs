@@ -27,7 +27,6 @@ public class Candy : MonoBehaviour {
     }
 	void Start () {
 
-        Debug.LogError("111111111111111");
     }
 	private void AddRandBg()
     {
