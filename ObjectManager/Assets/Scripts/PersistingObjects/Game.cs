@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : PersistableObject
 {
@@ -21,15 +22,47 @@ public class Game : PersistableObject
     private string savePath;
     private void Awake()
     {
-        shapes = new List<Shape>();
+       
 
     }
     // Use this for initialization
     void Start ()
     {
-		
-	}
-    
+        shapes = new List<Shape>();
+        if (Application.isEditor)
+        {
+            //只能有一个关卡
+            for(int i =0; i < SceneManager.sceneCount; i++)
+            {
+                Scene loadedScene = SceneManager.GetSceneAt(i);
+                if(loadedScene.name.Contains("Level "))
+                {
+                    Debug.LogError("已经加载的关卡名--->" + loadedScene.name);
+                    SceneManager.SetActiveScene(loadedScene);
+                    return;
+                }
+            }
+            //Scene loadedLevel = SceneManager.GetSceneByName("Level 1");
+            //if (loadedLevel.isLoaded)
+            //{
+            //    SceneManager.SetActiveScene(loadedLevel);
+            //    return;
+            //}
+            StartCoroutine(LoadLevel());
+        }
+       
+    }
+    IEnumerator LoadLevel()
+    {
+        enabled = false;
+        //同步加载场景
+        //SceneManager.LoadScene("Level 1",LoadSceneMode.Additive);
+        //yield return null;
+        //异步加载场景
+        yield return SceneManager.LoadSceneAsync("Level 1", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level 1"));
+        enabled = true;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(createKey))
