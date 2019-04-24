@@ -318,6 +318,7 @@ MonoBehaviour:
   newGameKey: 110
   saveKey: 115
   loadKey: 108
+  lvCnt: 2
 --- !u!4 &116833495
 Transform:
   m_ObjectHideFlags: 0
