@@ -17,6 +17,7 @@ public class Game : PersistableObject
     public KeyCode newGameKey = KeyCode.N;
     public KeyCode saveKey = KeyCode.S;
     public KeyCode loadKey = KeyCode.L;
+    public SpawnZone spZone;
     private List<Shape> shapes;
     private const int saveVersion = 2;
     private string savePath;
@@ -170,7 +171,8 @@ public class Game : PersistableObject
         //   PersistableObject o = Instantiate(prefab);
         Shape shape = shapeFactory.GetRandom();
         Transform t = shape.transform;
-        t.localPosition = Random.insideUnitSphere * 5;
+        //t.localPosition = Random.insideUnitSphere * 5;
+        t.localPosition = spZone.SpawnPoint;
         t.localRotation = Random.rotation;
         t.localScale = Vector3.one * Random.Range(0.1f, 1f);
         shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));

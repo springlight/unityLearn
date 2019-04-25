@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\PersistingObjects\GameDataWriter.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\PersistableObject.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\PersistentStorage.cs" />
+    <Compile Include="Assets\Scripts\SpawnZones\SpawnZone.cs" />
     <None Include="Assets\NewSurfaceShader.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/ObjectManager/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
