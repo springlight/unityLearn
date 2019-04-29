@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnZone : MonoBehaviour {
+public abstract class SpawnZone : MonoBehaviour {
 
-	public Vector3 SpawnPoint
+   
+	public abstract Vector3 SpawnPoint
     {
-        get
-        {
-            return transform.TransformPoint(Random.insideUnitSphere);
-        }
+        get;
+      
     }
+    
 }
