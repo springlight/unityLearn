@@ -42,4 +42,10 @@ public class GameDataWriter
         writer.Write(value.b);
         writer.Write(value.a);
     }
+
+    public void Write(Random.State state)
+    {
+        Debug.LogErrorFormat("To json--{0}", JsonUtility.ToJson(state));
+        writer.Write(JsonUtility.ToJson(state));
+    }
 }

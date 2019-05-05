@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : PersistableObject
 {
-    public static Game Ins { get; private set; }
+   // public static Game Ins { get; private set; }
     public float CreationSpeed { get; set; }
     public float DestructionSpeed { get; set; }
     float creationProgress;
@@ -22,19 +22,23 @@ public class Game : PersistableObject
     public KeyCode loadKey = KeyCode.L;
     public SpawnZone SpawnZoneOfLevel { get; set; }
     private List<Shape> shapes;
-    private const int saveVersion = 2;
+    private const int saveVersion = 3;
     private string savePath;
+    Random.State mainRandomState;
+    [SerializeField]
+    bool reseedOnLoad;
     [SerializeField]
      int lvCnt;
     private int loadedLvIdx;
-    private void OnEnable()
-    {
-        Ins = this;
+    //private void OnEnable()
+    //{
+    //    Ins = this;
 
-    }
+    //}
     // Use this for initialization
     void Start ()
     {
+        mainRandomState = Random.state;
         shapes = new List<Shape>();
         if (Application.isEditor)
         {
@@ -56,6 +60,7 @@ public class Game : PersistableObject
             //    SceneManager.SetActiveScene(loadedLevel);
             //    return;
             //}
+            BeginNewGame();
             StartCoroutine(LoadLevel(1));
         }
        
@@ -89,6 +94,7 @@ public class Game : PersistableObject
         else if (Input.GetKeyDown(newGameKey))
         {
             BeginNewGame();
+            StartCoroutine(LoadLevel(loadedLvIdx));
         }
         else if (Input.GetKeyDown(saveKey))
         {
@@ -130,7 +136,9 @@ public class Game : PersistableObject
     {
         //writer.Write(-saveVersion);
         writer.Write(shapes.Count);
+        writer.Write(Random.state);
         writer.Write(loadedLvIdx);//保存加载的场景
+        GameLevel.Cur.Save(writer);
         for (int i = 0; i < shapes.Count; i++)
         {
             writer.Write(shapes[i].ShapeId);
@@ -148,20 +156,46 @@ public class Game : PersistableObject
             Debug.LogError("Unsupported future save version " + version);
             return;
         }
-        int count = version <=0 ? -version:reader.ReadInt();
-        StartCoroutine(LoadLevel(version < 2 ? 1 : reader.ReadInt()));
+        StartCoroutine(LoadGame(reader));
+    }
+    IEnumerator LoadGame (GameDataReader reader)
+    {
+        int version = reader.version;
+        int count = version <= 0 ? -version : reader.ReadInt();
+        if (version >= 3)
+        {
+            Random.State state = reader.ReadRandomState();
+            if (!reseedOnLoad)
+            {
+                Random.state = state;
+            }
+        }
+
+        //StartCoroutine(LoadLevel(version < 2 ? 1 : reader.ReadInt()));
+        yield return LoadLevel(version < 2 ? 1 : reader.ReadInt());
+        if(version >= 3)
+        {
+            GameLevel.Cur.Load(reader);
+        }
         for (int i = 0; i < count; i++)
         {
             //也是做兼容性处理
-            int shapeId = version > 0 ? reader.ReadInt():0;
+            int shapeId = version > 0 ? reader.ReadInt() : 0;
             int materialId = version > 0 ? reader.ReadInt() : 0;
-            Shape shape = shapeFactory.Get(shapeId,materialId);
+            Shape shape = shapeFactory.Get(shapeId, materialId);
             shape.Load(reader);
             shapes.Add(shape);
         }
     }
     void BeginNewGame()
     {
+        Random.state = mainRandomState;
+        //To make the seeds a little more unpredictable, 
+        //we'll mix them with the current play time, accessible via Time.unscaledTime.
+        //The bitwise exclusive-OR operator ^ is good for this.
+        int seed = Random.Range(0, int.MaxValue)^(int)Time.unscaledTime;
+        mainRandomState = Random.state;
+        Random.InitState(seed);
         for(int i = 0; i < shapes.Count; i++)
         {
             // Destroy(shapes[i].gameObject);
@@ -172,11 +206,11 @@ public class Game : PersistableObject
 
     void CreateShape()
     {
-        //   PersistableObject o = Instantiate(prefab);
         Shape shape = shapeFactory.GetRandom();
         Transform t = shape.transform;
-        //t.localPosition = Random.insideUnitSphere * 5;
-        t.localPosition = SpawnZoneOfLevel.SpawnPoint;
+
+        // t.localPosition = SpawnZoneOfLevel.SpawnPoint;
+        t.localPosition = GameLevel.Cur.SpawnPoint;
         t.localRotation = Random.rotation;
         t.localScale = Vector3.one * Random.Range(0.1f, 1f);
         shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));

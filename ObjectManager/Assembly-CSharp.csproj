@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\PersistingObjects\GameDataWriter.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\PersistableObject.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\PersistentStorage.cs" />
+    <Compile Include="Assets\Scripts\RotatingObject.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\CompositeSpawnZone.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\CubeSpawnZone.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\GameLevel.cs" />
