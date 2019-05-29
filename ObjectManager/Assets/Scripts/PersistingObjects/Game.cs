@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game : PersistableObject
 {
@@ -14,7 +15,7 @@ public class Game : PersistableObject
     PersistentStorage stroage;
     [SerializeField]
     ShapeFactory shapeFactory;
-    //public PersistableObject prefab;
+
     public KeyCode createKey = KeyCode.C;
     public KeyCode destroyKey = KeyCode.X;
     public KeyCode newGameKey = KeyCode.N;
@@ -30,6 +31,10 @@ public class Game : PersistableObject
     [SerializeField]
      int lvCnt;
     private int loadedLvIdx;
+
+
+    [SerializeField] Slider creationSpeedSlider;
+    [SerializeField] Slider destructionSpeedSlider;
     //private void OnEnable()
     //{
     //    Ins = this;
@@ -118,8 +123,13 @@ public class Game : PersistableObject
                 }
             }
         }
+       
+    }
+
+    private void FixedUpdate()
+    {
         creationProgress += Time.deltaTime * CreationSpeed;
-        while(creationProgress >= 1f)
+        while (creationProgress >= 1f)
         {
             creationProgress -= 1f;
             CreateShape();
@@ -137,6 +147,10 @@ public class Game : PersistableObject
         //writer.Write(-saveVersion);
         writer.Write(shapes.Count);
         writer.Write(Random.state);
+        writer.Write(CreationSpeed);
+        writer.Write(creationProgress);
+        writer.Write(DestructionSpeed);
+        writer.Write(destructionProgress);
         writer.Write(loadedLvIdx);//保存加载的场景
         GameLevel.Cur.Save(writer);
         for (int i = 0; i < shapes.Count; i++)
@@ -169,6 +183,10 @@ public class Game : PersistableObject
             {
                 Random.state = state;
             }
+           creationSpeedSlider.value =  CreationSpeed = reader.ReadFloat();
+            creationProgress = reader.ReadFloat();
+           destructionSpeedSlider.value =  DestructionSpeed = reader.ReadFloat();
+            destructionProgress = reader.ReadFloat();
         }
 
         //StartCoroutine(LoadLevel(version < 2 ? 1 : reader.ReadInt()));
@@ -196,7 +214,11 @@ public class Game : PersistableObject
         int seed = Random.Range(0, int.MaxValue)^(int)Time.unscaledTime;
         mainRandomState = Random.state;
         Random.InitState(seed);
-        for(int i = 0; i < shapes.Count; i++)
+        CreationSpeed = 0;
+        creationSpeedSlider.value = 0;
+        DestructionSpeed = 0;
+        destructionSpeedSlider.value = 0;
+        for (int i = 0; i < shapes.Count; i++)
         {
             // Destroy(shapes[i].gameObject);
             shapeFactory.Reclaim(shapes[i]);
