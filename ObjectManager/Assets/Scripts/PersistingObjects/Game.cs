@@ -23,7 +23,7 @@ public class Game : PersistableObject
     public KeyCode loadKey = KeyCode.L;
     public SpawnZone SpawnZoneOfLevel { get; set; }
     private List<Shape> shapes;
-    private const int saveVersion = 3;
+    private const int saveVersion = 4;
     private string savePath;
     Random.State mainRandomState;
     [SerializeField]
@@ -128,6 +128,10 @@ public class Game : PersistableObject
 
     private void FixedUpdate()
     {
+        for(int i = 0; i < shapes.Count; i++)
+        {
+            shapes[i].GameUpdate();
+        }
         creationProgress += Time.deltaTime * CreationSpeed;
         while (creationProgress >= 1f)
         {
@@ -236,6 +240,7 @@ public class Game : PersistableObject
         t.localRotation = Random.rotation;
         t.localScale = Vector3.one * Random.Range(0.1f, 1f);
         shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
+        shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f,90f);
         shapes.Add(shape);
     }
 
