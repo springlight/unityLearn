@@ -235,12 +235,14 @@ public class Game : PersistableObject
         Shape shape = shapeFactory.GetRandom();
         Transform t = shape.transform;
 
-        // t.localPosition = SpawnZoneOfLevel.SpawnPoint;
-        t.localPosition = GameLevel.Cur.SpawnPoint;
-        t.localRotation = Random.rotation;
-        t.localScale = Vector3.one * Random.Range(0.1f, 1f);
-        shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
-        shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f,90f);
+        //// t.localPosition = SpawnZoneOfLevel.SpawnPoint;
+        //t.localPosition = GameLevel.Cur.SpawnPoint;
+        //t.localRotation = Random.rotation;
+        //t.localScale = Vector3.one * Random.Range(0.1f, 1f);
+        //shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
+        //shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f,90f);
+        //shape.Velocity = Random.onUnitSphere * Random.Range(0, 2f);
+        GameLevel.Cur.ConfigureSpawn(shape);
         shapes.Add(shape);
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shape : PersistableObject
 {
     public Vector3 AngularVelocity { get; set; }
+    public Vector3 Velocity { get; set; }
     int shapeId = int.MinValue;
     public int MaterialId { get; private set; }
     public int ShapeId
@@ -56,17 +57,21 @@ public class Shape : PersistableObject
         base.Save(writer);
         writer.Write(color);
         writer.Write(AngularVelocity);
+        writer.Write(Velocity);
     }
     public override void Load(GameDataReader reader)
     {
         base.Load(reader);
         SetColor(reader.version > 0 ? reader.ReadColor() : Color.white);
         AngularVelocity = reader.version >= 4 ? reader.ReadVector3() : Vector3.zero;
+        Velocity = reader.version >= 4 ? reader.ReadVector3() : Vector3.zero;
+
     }
 
     //private void FixedUpdate()
     public void GameUpdate()
     {
         transform.Rotate(AngularVelocity * Time.deltaTime);
+        transform.localPosition += Velocity * Time.deltaTime;
     }
 }

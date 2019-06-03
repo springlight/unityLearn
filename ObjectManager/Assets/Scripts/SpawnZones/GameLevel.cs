@@ -21,18 +21,19 @@ public class GameLevel : PersistableObject {
         }
     }
 
-    public Vector3 SpawnPoint
-    {
-        get { return spawnZone.SpawnPoint; }
-    }
+    //public Vector3 SpawnPoint
+    //{
+    //    get { return spawnZone.SpawnPoint; }
+    //}
     void Start () {
        // Game.Ins.SpawnZoneOfLevel = spawnZone;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
+    public void ConfigureSpawn(Shape shape)
+    {
+        spawnZone.ConfigureSpawn(shape);
+    }
 
     public override void Save(GameDataWriter writer)
     {
