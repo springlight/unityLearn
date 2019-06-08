@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Editor\FloatRangeDrawer.cs" />
+    <Compile Include="Assets\Scripts\Editor\FloatRangeSliderDrawer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>F:/study/unity/unityLearn/ObjectManager/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

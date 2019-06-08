@@ -19,6 +19,7 @@ public abstract class SpawnZone : PersistableObject {
         public FloatRange speed;
         public FloatRange angularSpeed;
         public FloatRange scale;
+        public ColorRangeHSV color;
     }
 
     [SerializeField]
@@ -42,8 +43,9 @@ public abstract class SpawnZone : PersistableObject {
         t.localPosition = SpawnPoint;
         t.localRotation = Random.rotation;
         t.localScale = Vector3.one * spwanConfig.scale.RandomValueInRange;
-        shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
+        // shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
         //   shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f, 90f);
+        shape.SetColor(spwanConfig.color.RandomInRange);
         shape.AngularVelocity = Random.onUnitSphere*spwanConfig.angularSpeed.RandomValueInRange;
 
         Vector3 direction;

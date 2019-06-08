@@ -59,10 +59,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Configure\ColorRangeHSV.cs" />
+    <Compile Include="Assets\Scripts\Configure\FloatRange.cs" />
+    <Compile Include="Assets\Scripts\Configure\FloatRangeSliderAttribute.cs" />
     <Compile Include="Assets\Scripts\Coordinate\LocalToWorld.cs" />
     <Compile Include="Assets\Scripts\Coordinate\ScreenToWorld.cs" />
     <Compile Include="Assets\Scripts\Coordinate\WorldToScreen.cs" />
-    <Compile Include="Assets\Scripts\FloatRange.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\Shape.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\ShapeFactory.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\Game.cs" />
