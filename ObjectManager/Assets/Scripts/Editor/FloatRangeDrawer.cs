@@ -9,6 +9,7 @@ public class FloatRangeDrawer : PropertyDrawer {
         int oriIndentLv = EditorGUI.indentLevel;
         float oriLabWidth = EditorGUIUtility.labelWidth;
         EditorGUI.BeginProperty(position, label, property);
+        //
         position = EditorGUI.PrefixLabel(position,GUIUtility.GetControlID(FocusType.Passive), label);
        
         position.width = position.width / 2f;
