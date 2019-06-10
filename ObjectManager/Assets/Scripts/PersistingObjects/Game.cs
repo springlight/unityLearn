@@ -23,7 +23,7 @@ public class Game : PersistableObject
     public KeyCode loadKey = KeyCode.L;
     public SpawnZone SpawnZoneOfLevel { get; set; }
     private List<Shape> shapes;
-    private const int saveVersion = 4;
+    private const int saveVersion = 5;
     private string savePath;
     Random.State mainRandomState;
     [SerializeField]
