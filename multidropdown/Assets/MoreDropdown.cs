@@ -47,6 +47,21 @@ public class MoreDropdown : MonoBehaviour
 
     void Awake()
     {
+        allInfo = new List<IMoreDropdownInfo>();
+        for(int i = 0; i < 10; i++)
+        {
+            string t = null;
+            if (i < 5)
+                t = i.ToString();
+            IMoreDropdownInfo item = new IMoreDropdownInfo(t);
+            item.list = new List<IMoreDropdownInfo>();
+            for(int j = 0; j < 5; j++)
+            {
+               // IMoreDropdownInfo _item = new IMoreDropdownInfo()
+                item.list.Add(new IMoreDropdownInfo(j.ToString()));
+            }
+            allInfo.Add(item);
+        }
         //下拉菜单
         mainButton.onClick.AddListener(delegate ()
         {
@@ -57,7 +72,7 @@ public class MoreDropdown : MonoBehaviour
                 //置于顶部
                 transform.SetAsLastSibling();
                 //开始创建列表
-              //  onCreateDropdown?.Invoke();
+             //   onCreateDropdown?.Invoke();
                 CreateDropdown(0, allInfo);
             }
             else
@@ -121,6 +136,7 @@ public class MoreDropdown : MonoBehaviour
             MCsUIListener listener = MCsUIListener.Get(cloneButton.gameObject);
             listener.onEnter = (go, eventData) =>
             {
+                Debug.LogError("11111111111111");
                 SetButtonState(cloneButton, ButtonColorState.Enter);
                 enterButton = cloneButton;
                 enterButtonLevel = level;
@@ -129,6 +145,7 @@ public class MoreDropdown : MonoBehaviour
             //这是项目封装的代码 可以继承IPointerClickHandler接口
             listener.onExit = (go, eventData) =>
             {
+                Debug.LogError("2222222222222");
                 SetButtonState(cloneButton, ButtonColorState.Exit);
                 enterButton = null;
                 enterButtonLevel = -1;
@@ -137,6 +154,7 @@ public class MoreDropdown : MonoBehaviour
 
             listener.onUp = (go, eventData) =>
             {
+                Debug.LogError("333333333333333");
                 if (enterButton != null)
                     OnSelectDropdownItem();
             };
