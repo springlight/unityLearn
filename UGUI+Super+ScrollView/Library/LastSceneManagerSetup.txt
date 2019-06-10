@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/SuperScrollView/Demo/Scenes/PageViewDemo.unity
+  isLoaded: 1
+  isActive: 1
