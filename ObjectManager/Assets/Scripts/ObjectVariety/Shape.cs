@@ -9,6 +9,7 @@ public class Shape : PersistableObject
     public Vector3 AngularVelocity { get; set; }
     public Vector3 Velocity { get; set; }
     int shapeId = int.MinValue;
+    List<ShapeBehavior> behaviorList = new List<ShapeBehavior>();
     public int MaterialId { get; private set; }
     public int ShapeId
     {
@@ -153,12 +154,34 @@ public class Shape : PersistableObject
     //private void FixedUpdate()
     public void GameUpdate()
     {
-        transform.Rotate(AngularVelocity * Time.deltaTime);
-        transform.localPosition += Velocity * Time.deltaTime;
+        //transform.Rotate(AngularVelocity * Time.deltaTime);
+        //transform.localPosition += Velocity * Time.deltaTime;
+        for(int i = 0; i < behaviorList.Count; i++)
+        {
+            behaviorList[i].GameUpdate(this);
+        }
     }
 
     public void Recycle()
     {
+        for(int i =0; i < behaviorList.Count; i++)
+        {
+            Destroy(behaviorList[i]);
+        }
         OriginFactory.Reclaim(this);
     }
+
+    //public void AddBehavior(ShapeBehavior behavior)
+    //{
+    //    behaviorList.Add(behavior);
+    //}
+
+    public T AddBehavior<T>()where T: ShapeBehavior
+    {
+        T behavior = gameObject.AddComponent<T>();
+        behaviorList.Add(behavior);
+        return behavior;
+    }
 }
+
+

@@ -60,27 +60,39 @@ public abstract class SpawnZone : PersistableObject {
                 shape.SetColor(spwanConfig.color.RandomInRange, i);
             }
         }
-       
-        shape.AngularVelocity = Random.onUnitSphere*spwanConfig.angularSpeed.RandomValueInRange;
-
-        Vector3 direction;
-        switch (spwanConfig.movementDirection)
+        float angularSpeed = spwanConfig.angularSpeed.RandomValueInRange;
+        if(angularSpeed != 0f)
         {
-            case SpwanConfiguration.MovementDirection.Upward:
-                direction = transform.up;
-                break;
-            case SpwanConfiguration.MovementDirection.Outward:
-                direction = (t.localPosition - transform.position).normalized;
-                break;
-            case SpwanConfiguration.MovementDirection.Random:
-                direction = Random.onUnitSphere;
-                break;
-            default:
-                direction = transform.forward;
-                break;
+            var rotation = shape.AddBehavior<RotationShapeBehavior>();
+
+            rotation.AngularVelocity = Random.onUnitSphere * angularSpeed;
+        }
+
+
+        float speed = spwanConfig.speed.RandomValueInRange;
+        if(speed != 0f)
+        {
+            Vector3 direction;
+            switch (spwanConfig.movementDirection)
+            {
+                case SpwanConfiguration.MovementDirection.Upward:
+                    direction = transform.up;
+                    break;
+                case SpwanConfiguration.MovementDirection.Outward:
+                    direction = (t.localPosition - transform.position).normalized;
+                    break;
+                case SpwanConfiguration.MovementDirection.Random:
+                    direction = Random.onUnitSphere;
+                    break;
+                default:
+                    direction = transform.forward;
+                    break;
+            }
+            var movement = shape.AddBehavior<MovementShapeBehavior>();
+
+            movement.Velocity = direction * speed;
         }
         
-        shape.Velocity = direction * spwanConfig.speed.RandomValueInRange;
         return shape;
     }
    

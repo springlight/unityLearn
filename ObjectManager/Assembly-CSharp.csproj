@@ -65,7 +65,10 @@
     <Compile Include="Assets\Scripts\Coordinate\LocalToWorld.cs" />
     <Compile Include="Assets\Scripts\Coordinate\ScreenToWorld.cs" />
     <Compile Include="Assets\Scripts\Coordinate\WorldToScreen.cs" />
+    <Compile Include="Assets\Scripts\ObjectVariety\MovementShapeBehavior.cs" />
+    <Compile Include="Assets\Scripts\ObjectVariety\RotationShapeBehavior.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\Shape.cs" />
+    <Compile Include="Assets\Scripts\ObjectVariety\ShapeBehavior.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\ShapeFactory.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\Game.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\GameDataReader.cs" />
