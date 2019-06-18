@@ -13,8 +13,8 @@ public class Game : PersistableObject
     float destructionProgress;
     [SerializeField]
     PersistentStorage stroage;
-    [SerializeField]
-    ShapeFactory shapeFactory;
+    //[SerializeField]
+    //ShapeFactory shapeFactory;
 
     public KeyCode createKey = KeyCode.C;
     public KeyCode destroyKey = KeyCode.X;
@@ -32,7 +32,7 @@ public class Game : PersistableObject
      int lvCnt;
     private int loadedLvIdx;
 
-
+    [SerializeField] ShapeFactory[] shapeFactories;
     [SerializeField] Slider creationSpeedSlider;
     [SerializeField] Slider destructionSpeedSlider;
     //private void OnEnable()
@@ -41,6 +41,18 @@ public class Game : PersistableObject
 
     //}
     // Use this for initialization
+
+    private void OnEnable()
+    {
+        if(shapeFactories[0].FactoryId != 0)
+        {
+            for (int i = 0; i < shapeFactories.Length; i++)
+            {
+                shapeFactories[i].FactoryId = i;
+            }
+        }
+     
+    }
     void Start ()
     {
         mainRandomState = Random.state;
@@ -160,6 +172,7 @@ public class Game : PersistableObject
         for (int i = 0; i < shapes.Count; i++)
         {
             writer.Write(shapes[i].ShapeId);
+            writer.Write(shapes[i].ShapeId);
             writer.Write(shapes[i].MaterialId);
             shapes[i].Save(writer);
         }
@@ -202,9 +215,10 @@ public class Game : PersistableObject
         for (int i = 0; i < count; i++)
         {
             //也是做兼容性处理
+            int factoryId = version >= 5 ? reader.ReadInt() : 0;
             int shapeId = version > 0 ? reader.ReadInt() : 0;
             int materialId = version > 0 ? reader.ReadInt() : 0;
-            Shape shape = shapeFactory.Get(shapeId, materialId);
+            Shape shape = shapeFactories[factoryId].Get(shapeId, materialId);
             shape.Load(reader);
             shapes.Add(shape);
         }

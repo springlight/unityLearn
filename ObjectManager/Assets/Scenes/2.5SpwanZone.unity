@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stroage: {fileID: 1272884470}
-  shapeFactory: {fileID: 11400000, guid: 20f80045f081bca41a430cbcccca2fca, type: 2}
   createKey: 99
   destroyKey: 120
   newGameKey: 110
@@ -320,6 +319,9 @@ MonoBehaviour:
   loadKey: 108
   reseedOnLoad: 0
   lvCnt: 4
+  shapeFactories:
+  - {fileID: 11400000, guid: 20f80045f081bca41a430cbcccca2fca, type: 2}
+  - {fileID: 11400000, guid: 82eeb54bfcaf4a645aada69153fe876a, type: 2}
   creationSpeedSlider: {fileID: 1972815103}
   destructionSpeedSlider: {fileID: 10130030}
 --- !u!4 &116833495
