@@ -225,15 +225,16 @@ public class Game : PersistableObject
         for (int i = 0; i < shapes.Count; i++)
         {
             // Destroy(shapes[i].gameObject);
-            shapeFactory.Reclaim(shapes[i]);
+            //shapeFactory.Reclaim(shapes[i]);
+            shapes[i].Recycle();
         }
         shapes.Clear();
     }
 
     void CreateShape()
     {
-        Shape shape = shapeFactory.GetRandom();
-        Transform t = shape.transform;
+        //Shape shape = shapeFactory.GetRandom();
+        //Transform t = shape.transform;
 
         //// t.localPosition = SpawnZoneOfLevel.SpawnPoint;
         //t.localPosition = GameLevel.Cur.SpawnPoint;
@@ -242,8 +243,8 @@ public class Game : PersistableObject
         //shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
         //shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f,90f);
         //shape.Velocity = Random.onUnitSphere * Random.Range(0, 2f);
-        GameLevel.Cur.ConfigureSpawn(shape);
-        shapes.Add(shape);
+        GameLevel.Cur.SpawnShape();
+        shapes.Add(GameLevel.Cur.SpawnShape());
     }
 
     void DestroyShape()
@@ -252,7 +253,8 @@ public class Game : PersistableObject
         {
             int index = Random.Range(0, shapes.Count);
             // Destroy(shapes[index].gameObject);
-            shapeFactory.Reclaim(shapes[index]);
+            // shapeFactory.Reclaim(shapes[index]);
+            shapes[index].Recycle();
             //1,RemoveAt删除比较低效率
             //shapes.RemoveAt(index);
             //2，高效删除

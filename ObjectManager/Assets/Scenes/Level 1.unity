@@ -249,6 +249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spwanConfig:
+    factories:
+    - {fileID: 11400000, guid: 82eeb54bfcaf4a645aada69153fe876a, type: 2}
+    - {fileID: 11400000, guid: 82eeb54bfcaf4a645aada69153fe876a, type: 2}
+    - {fileID: 11400000, guid: 20f80045f081bca41a430cbcccca2fca, type: 2}
     movementDirection: 3
     speed:
       min: 1.5
@@ -269,6 +273,7 @@ MonoBehaviour:
       value:
         min: 0.48980126
         max: 1
+    uniformColor: 0
   surfaceOnly: 1
 --- !u!4 &1724076889
 Transform:

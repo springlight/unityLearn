@@ -14,12 +14,13 @@ public abstract class SpawnZone : PersistableObject {
             Outward,
             Random
         }
-
+        public ShapeFactory[] factories;
         public MovementDirection movementDirection;
         public FloatRange speed;
         public FloatRange angularSpeed;
         public FloatRange scale;
         public ColorRangeHSV color;
+        public bool uniformColor;
     }
 
     [SerializeField]
@@ -36,8 +37,11 @@ public abstract class SpawnZone : PersistableObject {
       
     }
 
-    public virtual void ConfigureSpawn(Shape shape)
+    //public virtual void ConfigureSpawn(Shape shape)
+    public virtual Shape SpawnShape()
     {
+        int factoryIdx = Random.Range(0, spwanConfig.factories.Length);
+        Shape shape = spwanConfig.factories[factoryIdx].GetRandom();
         Transform t = shape.transform;
 
         t.localPosition = SpawnPoint;
@@ -45,7 +49,18 @@ public abstract class SpawnZone : PersistableObject {
         t.localScale = Vector3.one * spwanConfig.scale.RandomValueInRange;
         // shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
         //   shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f, 90f);
-        shape.SetColor(spwanConfig.color.RandomInRange);
+        if (spwanConfig.uniformColor)
+        {
+            shape.SetColor(spwanConfig.color.RandomInRange);
+        }
+        else
+        {
+            for(int i = 0; i <shape.ColorCount; i++)
+            {
+                shape.SetColor(spwanConfig.color.RandomInRange, i);
+            }
+        }
+       
         shape.AngularVelocity = Random.onUnitSphere*spwanConfig.angularSpeed.RandomValueInRange;
 
         Vector3 direction;
@@ -66,6 +81,8 @@ public abstract class SpawnZone : PersistableObject {
         }
         
         shape.Velocity = direction * spwanConfig.speed.RandomValueInRange;
+        return shape;
     }
+   
     
 }

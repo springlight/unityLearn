@@ -39,6 +39,20 @@ public class Shape : PersistableObject
     {
         colors = new Color[meshRenderers.Length];
     }
+
+    private ShapeFactory oriFactory;
+    public ShapeFactory OriginFactory
+    {
+        get { return oriFactory; }
+        set
+        {
+            if (oriFactory == null)
+                oriFactory = value;
+            else
+                Debug.LogError("Not allowed to change factory.");
+        }
+    }
+
     public void SetMaterial(Material material,int materialId)
     {
         for(int i = 0; i <meshRenderers.Length; i++)
@@ -85,6 +99,7 @@ public class Shape : PersistableObject
     public override void Save(GameDataWriter writer)
     {
         base.Save(writer);
+        writer.Write(colors.Length);
        // writer.Write(color);version = 4
        for(int i =0; i < colors.Length; i++)
         {
@@ -98,10 +113,7 @@ public class Shape : PersistableObject
         base.Load(reader);
         if(reader.version >= 5)
         {
-            for(int i =0; i <colors.Length; i++)
-            {
-                SetColor(reader.ReadColor(), i);
-            }
+            LoadColors(reader);
         }
         else
         {
@@ -113,10 +125,40 @@ public class Shape : PersistableObject
 
     }
 
+    private void LoadColors(GameDataReader reader)
+    {
+        int count = reader.ReadInt();
+        int max = count <= colors.Length ? count : colors.Length;
+        int i = 0;
+        for (; i < max; i++)
+        {
+            SetColor(reader.ReadColor(), i);
+        }
+        if(count > max)//存储的数量大于需要的
+        {
+            for(;i< count; i++)
+            {
+                reader.ReadColor();//把多余的取出来
+            }
+        }
+        else if( count <max)
+        {
+            for(; i < max; i++)
+            {
+                SetColor(Color.white, i);
+            }
+        }
+    }
+
     //private void FixedUpdate()
     public void GameUpdate()
     {
         transform.Rotate(AngularVelocity * Time.deltaTime);
         transform.localPosition += Velocity * Time.deltaTime;
+    }
+
+    public void Recycle()
+    {
+        OriginFactory.Reclaim(this);
     }
 }
