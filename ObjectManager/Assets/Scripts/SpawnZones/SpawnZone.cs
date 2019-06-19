@@ -21,6 +21,12 @@ public abstract class SpawnZone : PersistableObject {
         public FloatRange scale;
         public ColorRangeHSV color;
         public bool uniformColor;
+
+        public MovementDirection oscillationDirection;
+
+        public FloatRange oscillationAmplitude;
+
+        public FloatRange oscillationFrequency;
     }
 
     [SerializeField]
@@ -72,29 +78,59 @@ public abstract class SpawnZone : PersistableObject {
         float speed = spwanConfig.speed.RandomValueInRange;
         if(speed != 0f)
         {
-            Vector3 direction;
-            switch (spwanConfig.movementDirection)
-            {
-                case SpwanConfiguration.MovementDirection.Upward:
-                    direction = transform.up;
-                    break;
-                case SpwanConfiguration.MovementDirection.Outward:
-                    direction = (t.localPosition - transform.position).normalized;
-                    break;
-                case SpwanConfiguration.MovementDirection.Random:
-                    direction = Random.onUnitSphere;
-                    break;
-                default:
-                    direction = transform.forward;
-                    break;
-            }
+            //Vector3 direction;
+            //switch (spwanConfig.movementDirection)
+            //{
+            //    case SpwanConfiguration.MovementDirection.Upward:
+            //        direction = transform.up;
+            //        break;
+            //    case SpwanConfiguration.MovementDirection.Outward:
+            //        direction = (t.localPosition - transform.position).normalized;
+            //        break;
+            //    case SpwanConfiguration.MovementDirection.Random:
+            //        direction = Random.onUnitSphere;
+            //        break;
+            //    default:
+            //        direction = transform.forward;
+            //        break;
+            //}
             var movement = shape.AddBehavior<MovementShapeBehavior>();
 
-            movement.Velocity = direction * speed;
+            movement.Velocity = GetDirectionVector(spwanConfig.movementDirection,t) * speed;
         }
-        
+
+
+        SetupOscillation(shape);
         return shape;
     }
-   
-    
+
+    void SetupOscillation(Shape shape)
+    {
+        float amplitude = spwanConfig.oscillationAmplitude.RandomValueInRange;
+        float frequency = spwanConfig.oscillationFrequency.RandomValueInRange;
+        if (amplitude == 0f || frequency == 0f)
+        {
+            return;
+        }
+        var oscillation = shape.AddBehavior<OscillationShapeBehavior>();
+        oscillation.Offset = GetDirectionVector(
+            spwanConfig.oscillationDirection, shape.transform
+        ) * amplitude;
+        oscillation.Frequency = frequency;
+    }
+
+    Vector3 GetDirectionVector(SpwanConfiguration.MovementDirection direction, Transform t)
+    {
+        switch (direction)
+        {
+            case SpwanConfiguration.MovementDirection.Upward:
+                return transform.up;
+            case SpwanConfiguration.MovementDirection.Outward:
+                return (t.localPosition - transform.position).normalized;
+            case SpwanConfiguration.MovementDirection.Random:
+                return Random.onUnitSphere;
+            default:
+                return transform.forward;
+        }
+    }
 }
