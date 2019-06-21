@@ -45,11 +45,11 @@ public class CompositeSpawnZone : SpawnZone
         nextSequentialIndex = reader.ReadInt();
     }
 
-    public override Shape SpawnShape()
+    public override void SpawnShape()
     {
         if (overrideConfig)
         {
-           return  base.SpawnShape();
+            base.SpawnShape();
         }
         else
         {
@@ -64,7 +64,7 @@ public class CompositeSpawnZone : SpawnZone
             {
                 index = Random.Range(0, spawnZones.Length);
             }
-           return  spawnZones[index].SpawnShape();
+            spawnZones[index].SpawnShape();
         }
         
     }

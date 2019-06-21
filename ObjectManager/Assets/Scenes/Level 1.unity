@@ -281,7 +281,17 @@ MonoBehaviour:
     oscillationFrequency:
       min: 1
       max: 1
-  surfaceOnly: 1
+    satellite:
+      relativeScale:
+        min: 0.24959333
+        max: 0.5062822
+      orbitRadius:
+        min: 0.95
+        max: 2.04
+      orbitFrequency:
+        min: 0.25
+        max: 0.5
+  surfaceOnly: 0
 --- !u!4 &1724076889
 Transform:
   m_ObjectHideFlags: 0

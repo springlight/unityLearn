@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ObjectVariety\MovementShapeBehavior.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\OscillationShapeBehavior.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\RotationShapeBehavior.cs" />
+    <Compile Include="Assets\Scripts\ObjectVariety\SatelliteShapeBehavior.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\Shape.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\ShapeBehavior.cs" />
     <Compile Include="Assets\Scripts\ObjectVariety\ShapeBehaviorPool.cs" />

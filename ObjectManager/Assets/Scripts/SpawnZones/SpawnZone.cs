@@ -27,6 +27,16 @@ public abstract class SpawnZone : PersistableObject {
         public FloatRange oscillationAmplitude;
 
         public FloatRange oscillationFrequency;
+        [System.Serializable]
+        public struct SatelliteConfiguration
+        {
+            [FloatRangeSlider(0.1f, 1f)]
+            public FloatRange relativeScale;
+            public FloatRange orbitRadius;//半径
+            public FloatRange orbitFrequency;//速度
+        }
+
+        public SatelliteConfiguration satellite;
     }
 
     [SerializeField]
@@ -44,7 +54,7 @@ public abstract class SpawnZone : PersistableObject {
     }
 
     //public virtual void ConfigureSpawn(Shape shape)
-    public virtual Shape SpawnShape()
+    public virtual void SpawnShape()
     {
         int factoryIdx = Random.Range(0, spwanConfig.factories.Length);
         Shape shape = spwanConfig.factories[factoryIdx].GetRandom();
@@ -55,19 +65,9 @@ public abstract class SpawnZone : PersistableObject {
         t.localScale = Vector3.one * spwanConfig.scale.RandomValueInRange;
         // shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
         //   shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f, 90f);
-        if (spwanConfig.uniformColor)
-        {
-            shape.SetColor(spwanConfig.color.RandomInRange);
-        }
-        else
-        {
-            for(int i = 0; i <shape.ColorCount; i++)
-            {
-                shape.SetColor(spwanConfig.color.RandomInRange, i);
-            }
-        }
+        SetupColor(shape);
         float angularSpeed = spwanConfig.angularSpeed.RandomValueInRange;
-        if(angularSpeed != 0f)
+        if (angularSpeed != 0f)
         {
             var rotation = shape.AddBehavior<RotationShapeBehavior>();
 
@@ -76,32 +76,33 @@ public abstract class SpawnZone : PersistableObject {
 
 
         float speed = spwanConfig.speed.RandomValueInRange;
-        if(speed != 0f)
+        if (speed != 0f)
         {
-            //Vector3 direction;
-            //switch (spwanConfig.movementDirection)
-            //{
-            //    case SpwanConfiguration.MovementDirection.Upward:
-            //        direction = transform.up;
-            //        break;
-            //    case SpwanConfiguration.MovementDirection.Outward:
-            //        direction = (t.localPosition - transform.position).normalized;
-            //        break;
-            //    case SpwanConfiguration.MovementDirection.Random:
-            //        direction = Random.onUnitSphere;
-            //        break;
-            //    default:
-            //        direction = transform.forward;
-            //        break;
-            //}
+
             var movement = shape.AddBehavior<MovementShapeBehavior>();
 
-            movement.Velocity = GetDirectionVector(spwanConfig.movementDirection,t) * speed;
+            movement.Velocity = GetDirectionVector(spwanConfig.movementDirection, t) * speed;
         }
 
 
         SetupOscillation(shape);
-        return shape;
+        CreateSatelliteFor(shape);
+       // return shape;
+    }
+
+    private void SetupColor(Shape shape)
+    {
+        if (spwanConfig.uniformColor)
+        {
+            shape.SetColor(spwanConfig.color.RandomInRange);
+        }
+        else
+        {
+            for (int i = 0; i < shape.ColorCount; i++)
+            {
+                shape.SetColor(spwanConfig.color.RandomInRange, i);
+            }
+        }
     }
 
     void SetupOscillation(Shape shape)
@@ -132,5 +133,22 @@ public abstract class SpawnZone : PersistableObject {
             default:
                 return transform.forward;
         }
+    }
+    /// <summary>
+    /// 添加卫星
+    /// </summary>
+    /// <param name="focalShape"></param>
+    void CreateSatelliteFor(Shape focalShape)
+    {
+        int factoryIdx = Random.Range(0, spwanConfig.factories.Length);
+        Shape shape = spwanConfig.factories[factoryIdx].GetRandom();
+        Transform t = shape.transform;
+        t.localRotation = Random.rotation;
+
+        t.localScale = focalShape.transform.localScale * spwanConfig.satellite.relativeScale.RandomValueInRange;
+        //t.localPosition = focalShape.transform.localPosition + Vector3.up;
+        //shape.AddBehavior<MovementShapeBehavior>().Velocity = Vector3.up;
+        SetupColor(shape);
+        shape.AddBehavior<SatelliteShapeBehavior>().Initialize(shape,focalShape,spwanConfig.satellite.orbitRadius.RandomValueInRange,spwanConfig.satellite.orbitFrequency.RandomValueInRange);
     }
 }

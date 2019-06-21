@@ -49,6 +49,7 @@ public class ShapeFactory : ScriptableObject
         }
        
         instance.SetMaterial(materials[materialId], materialId);
+        Game.Ins.AddShape(instance);
         return instance;
     }
 

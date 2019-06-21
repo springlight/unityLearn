@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Game : PersistableObject
 {
-   // public static Game Ins { get; private set; }
+    public static Game Ins { get; private set; }
     public float CreationSpeed { get; set; }
     public float DestructionSpeed { get; set; }
     float creationProgress;
@@ -35,16 +35,13 @@ public class Game : PersistableObject
     [SerializeField] ShapeFactory[] shapeFactories;
     [SerializeField] Slider creationSpeedSlider;
     [SerializeField] Slider destructionSpeedSlider;
-    //private void OnEnable()
-    //{
-    //    Ins = this;
-
-    //}
+    
     // Use this for initialization
 
     private void OnEnable()
     {
-        if(shapeFactories[0].FactoryId != 0)
+        Ins = this;
+        if (shapeFactories[0].FactoryId != 0)
         {
             for (int i = 0; i < shapeFactories.Length; i++)
             {
@@ -102,7 +99,8 @@ public class Game : PersistableObject
     {
         if (Input.GetKeyDown(createKey))
         {
-            CreateShape();
+            // CreateShape();
+            GameLevel.Cur.SpawnShape();
         }
         else if (Input.GetKeyDown(destroyKey))
         {
@@ -148,7 +146,8 @@ public class Game : PersistableObject
         while (creationProgress >= 1f)
         {
             creationProgress -= 1f;
-            CreateShape();
+            GameLevel.Cur.SpawnShape();
+            //  CreateShape();
         }
 
         destructionProgress += Time.deltaTime * DestructionSpeed;
@@ -220,7 +219,7 @@ public class Game : PersistableObject
             int materialId = version > 0 ? reader.ReadInt() : 0;
             Shape shape = shapeFactories[factoryId].Get(shapeId, materialId);
             shape.Load(reader);
-            shapes.Add(shape);
+           // shapes.Add(shape);
         }
     }
     void BeginNewGame()
@@ -245,21 +244,21 @@ public class Game : PersistableObject
         shapes.Clear();
     }
 
-    void CreateShape()
-    {
-        //Shape shape = shapeFactory.GetRandom();
-        //Transform t = shape.transform;
+    //void CreateShape()
+    //{
+    //    //Shape shape = shapeFactory.GetRandom();
+    //    //Transform t = shape.transform;
 
-        //// t.localPosition = SpawnZoneOfLevel.SpawnPoint;
-        //t.localPosition = GameLevel.Cur.SpawnPoint;
-        //t.localRotation = Random.rotation;
-        //t.localScale = Vector3.one * Random.Range(0.1f, 1f);
-        //shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
-        //shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f,90f);
-        //shape.Velocity = Random.onUnitSphere * Random.Range(0, 2f);
-        GameLevel.Cur.SpawnShape();
-        shapes.Add(GameLevel.Cur.SpawnShape());
-    }
+    //    //// t.localPosition = SpawnZoneOfLevel.SpawnPoint;
+    //    //t.localPosition = GameLevel.Cur.SpawnPoint;
+    //    //t.localRotation = Random.rotation;
+    //    //t.localScale = Vector3.one * Random.Range(0.1f, 1f);
+    //    //shape.SetColor(Random.ColorHSV(0f, 1f, 0.5f, 1f, 0.25f, 1f, 1f, 1f));
+    //    //shape.AngularVelocity = Random.onUnitSphere * Random.Range(5f,90f);
+    //    //shape.Velocity = Random.onUnitSphere * Random.Range(0, 2f);
+    //    GameLevel.Cur.SpawnShape();
+    //    shapes.Add(GameLevel.Cur.SpawnShape());
+    //}
 
     void DestroyShape()
     {
@@ -278,6 +277,11 @@ public class Game : PersistableObject
 
         }
        
+    }
+
+    public void AddShape(Shape shape)
+    {
+        shapes.Add(shape);
     }
 
 }
