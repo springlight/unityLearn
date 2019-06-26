@@ -38,11 +38,11 @@ public abstract class ShapeBehavior
 #endif
 {
 
-   
-    public abstract void GameUpdate(Shape shape);
+    public abstract bool GameUpdate(Shape shape);
     public abstract void Save(GameDataWriter write);
     public abstract void Load(GameDataReader reader);
     public abstract ShapeBehaviorType BehaviorType { get; }
+    public virtual void ResolveShapeInstances() { }
 
     public abstract void Recycle();
 #if UNITY_EDITOR

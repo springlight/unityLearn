@@ -48,4 +48,8 @@ public class GameDataWriter
         Debug.LogErrorFormat("To json--{0}", JsonUtility.ToJson(state));
         writer.Write(JsonUtility.ToJson(state));
     }
+    public void Write(ShapeInstance value)
+    {
+        writer.Write(value.IsValid ?value.Shape.SaveIdx:-1);
+    }
 }

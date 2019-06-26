@@ -156,6 +156,15 @@ public class Game : PersistableObject
             destructionProgress -= 1f;
             DestroyShape();
         }
+
+        int limit = GameLevel.Cur.PopulationLimit;
+        if (limit > 0)
+        {
+            while (shapes.Count > limit)
+            {
+                DestroyShape();
+            }
+        }
     }
     public override void Save(GameDataWriter writer)
     {
@@ -203,6 +212,10 @@ public class Game : PersistableObject
             creationProgress = reader.ReadFloat();
            destructionSpeedSlider.value =  DestructionSpeed = reader.ReadFloat();
             destructionProgress = reader.ReadFloat();
+            for (int i = 0; i < shapes.Count; i++)
+            {
+                shapes[i].ResolveShapeInstances();
+            }
         }
 
         //StartCoroutine(LoadLevel(version < 2 ? 1 : reader.ReadInt()));
@@ -272,6 +285,7 @@ public class Game : PersistableObject
             //shapes.RemoveAt(index);
             //2，高效删除
             int lastIndex = shapes.Count - 1;
+            shapes[lastIndex].SaveIdx = index;
             shapes[index] = shapes[lastIndex];
             shapes.RemoveAt(lastIndex);
 
@@ -281,7 +295,12 @@ public class Game : PersistableObject
 
     public void AddShape(Shape shape)
     {
+        shape.SaveIdx = shapes.Count;
         shapes.Add(shape);
     }
 
+    public Shape GetShape(int idx)
+    {
+        return shapes[idx];
+    }
 }

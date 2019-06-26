@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SatelliteShapeBehavior : ShapeBehavior
 {
-    Shape focalShape;
+    ShapeInstance focalShape;
+
+    Vector3 prePos;
+    //  Shape focalShape;
     float frequency;
     Vector3 cosOffset;
     Vector3 sinOffset;
@@ -13,15 +16,27 @@ public class SatelliteShapeBehavior : ShapeBehavior
         get { return ShapeBehaviorType.Statellite; }
     }
 
-    public override void GameUpdate(Shape shape)
+    public override bool GameUpdate(Shape shape)
     {
-        float t = 2f * Mathf.PI * frequency * shape.Age;
-        shape.transform.localPosition = focalShape.transform.localPosition + cosOffset * Mathf.Cos(t) + sinOffset * Mathf.Sin(t);
+        if (focalShape.IsValid)
+        {
+            float t = 2f * Mathf.PI * frequency * shape.Age;
+            prePos = shape.transform.localPosition;
+            shape.transform.localPosition = focalShape.Shape.transform.localPosition + cosOffset * Mathf.Cos(t) + sinOffset * Mathf.Sin(t);
+           
+            shape.AddBehavior<MovementShapeBehavior>().Velocity = (shape.transform.localPosition - prePos)/Time.deltaTime;
+            return true;
+        }
+        return false;
     }
 
     public override void Load(GameDataReader reader)
     {
-        
+        focalShape = reader.ReadShapeInstance();
+        frequency = reader.ReadFloat();
+        cosOffset = reader.ReadVector3();
+        sinOffset = reader.ReadVector3();
+        prePos = reader.ReadVector3();
     }
 
     public override void Recycle()
@@ -31,19 +46,40 @@ public class SatelliteShapeBehavior : ShapeBehavior
 
     public override void Save(GameDataWriter write)
     {
-       
+        write.Write(focalShape);
+        write.Write(frequency);
+        write.Write(cosOffset);
+        write.Write(sinOffset);
+        write.Write(prePos);
     }
 
+    public override void ResolveShapeInstances()
+    {
+       focalShape.Resolve();
+    }
 
     public void Initialize (Shape shape,Shape focalShape,float radius,float frequency)
     {
         this.focalShape = focalShape;
         this.frequency = frequency;
-        cosOffset = Vector3.right;
-        sinOffset = Vector3.forward;
+        Vector3 orbitAxis = Random.onUnitSphere;
+        do
+        {
+            cosOffset = Vector3.Cross(orbitAxis, Random.onUnitSphere).normalized;
+
+        } while (cosOffset.sqrMagnitude < 0.1f);//防止生成的向量过小
+
+        //cosOffset = Vector3.right;
+        //sinOffset = Vector3.forward;
+        sinOffset = Vector3.Cross(cosOffset, orbitAxis);
         cosOffset *= radius;
         sinOffset *= radius;
+        //好好消化这块
+        shape.AddBehavior<RotationShapeBehavior>().AngularVelocity =
+            -360f * frequency * shape.transform.InverseTransformDirection(orbitAxis);
 
+       
         GameUpdate(shape);
+        prePos = shape.transform.localPosition;
     }
 }

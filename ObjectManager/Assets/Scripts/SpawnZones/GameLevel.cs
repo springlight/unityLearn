@@ -7,6 +7,11 @@ public class GameLevel : PersistableObject {
     public static GameLevel Cur { get; private set; }
 
     [SerializeField]
+    int populationLimit;
+
+    public int PopulationLimit { get { return populationLimit; } }
+
+    [SerializeField]
     PersistableObject[] persistableObjects;
 
     [SerializeField]

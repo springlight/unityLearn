@@ -30,6 +30,8 @@ public abstract class SpawnZone : PersistableObject {
         [System.Serializable]
         public struct SatelliteConfiguration
         {
+            public IntRange amount;
+
             [FloatRangeSlider(0.1f, 1f)]
             public FloatRange relativeScale;
             public FloatRange orbitRadius;//半径
@@ -86,7 +88,12 @@ public abstract class SpawnZone : PersistableObject {
 
 
         SetupOscillation(shape);
-        CreateSatelliteFor(shape);
+        int satelliteCnt = spwanConfig.satellite.amount.RandomValueInRange;
+        for(int i = 0; i <satelliteCnt; i++)
+        {
+            CreateSatelliteFor(shape);
+        }
+      
        // return shape;
     }
 
