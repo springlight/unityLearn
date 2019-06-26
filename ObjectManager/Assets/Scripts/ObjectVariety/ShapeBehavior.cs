@@ -7,7 +7,8 @@ public enum ShapeBehaviorType
     Movement,
     Rotation,
     Oscillation,
-    Statellite
+    Statellite,
+    Growing
 }
 
 

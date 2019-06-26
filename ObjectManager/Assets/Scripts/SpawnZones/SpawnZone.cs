@@ -39,6 +39,14 @@ public abstract class SpawnZone : PersistableObject {
         }
 
         public SatelliteConfiguration satellite;
+
+        [System.Serializable]
+        public struct LifecycleConfiguration
+        {
+            [FloatRangeSlider(0f, 2f)]
+            public FloatRange growingDuration;
+        }
+        public LifecycleConfiguration lifecycle;
     }
 
     [SerializeField]
@@ -88,13 +96,14 @@ public abstract class SpawnZone : PersistableObject {
 
 
         SetupOscillation(shape);
+        float growingDuraion = spwanConfig.lifecycle.growingDuration.RandomValueInRange;
         int satelliteCnt = spwanConfig.satellite.amount.RandomValueInRange;
         for(int i = 0; i <satelliteCnt; i++)
         {
-            CreateSatelliteFor(shape);
+            CreateSatelliteFor(shape, growingDuraion);
         }
-      
-       // return shape;
+        SetUpLifecycle(shape, growingDuraion);
+        // return shape;
     }
 
     private void SetupColor(Shape shape)
@@ -145,7 +154,7 @@ public abstract class SpawnZone : PersistableObject {
     /// 添加卫星
     /// </summary>
     /// <param name="focalShape"></param>
-    void CreateSatelliteFor(Shape focalShape)
+    void CreateSatelliteFor(Shape focalShape,float growingDuration)
     {
         int factoryIdx = Random.Range(0, spwanConfig.factories.Length);
         Shape shape = spwanConfig.factories[factoryIdx].GetRandom();
@@ -157,5 +166,18 @@ public abstract class SpawnZone : PersistableObject {
         //shape.AddBehavior<MovementShapeBehavior>().Velocity = Vector3.up;
         SetupColor(shape);
         shape.AddBehavior<SatelliteShapeBehavior>().Initialize(shape,focalShape,spwanConfig.satellite.orbitRadius.RandomValueInRange,spwanConfig.satellite.orbitFrequency.RandomValueInRange);
+        SetUpLifecycle(shape, growingDuration);
+    }
+    /// <summary>
+    /// 从scale 0到配置大小逐渐缩放
+    /// </summary>
+    /// <param name="shape"></param>
+    /// <param name="growingDuration"></param>
+    void SetUpLifecycle(Shape shape,float growingDuration)
+    {
+        if(growingDuration > 0f)
+        {
+            shape.AddBehavior<GrowingShapeBehavior>().Initiallize(shape, growingDuration);
+        }
     }
 }
