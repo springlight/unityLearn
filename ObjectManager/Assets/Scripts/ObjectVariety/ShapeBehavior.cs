@@ -8,7 +8,8 @@ public enum ShapeBehaviorType
     Rotation,
     Oscillation,
     Statellite,
-    Growing
+    Growing,
+    Dying
 }
 
 
@@ -27,6 +28,7 @@ public static class ShapeBehaviorTypeMethods
                 return ShapeBehaviorPool<OscillationShapeBehavior>.Get();
             case ShapeBehaviorType.Statellite:
                 return ShapeBehaviorPool< SatelliteShapeBehavior>.Get();
+
                 
         }
         return null;

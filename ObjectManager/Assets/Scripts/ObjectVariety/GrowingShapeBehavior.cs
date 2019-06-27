@@ -4,17 +4,18 @@ using UnityEngine;
 /// <summary>
 /// 实现shape scale from zero to the scale that gave it 
 /// </summary>
-public class GrowingShapeBehavior : ShapeBehavior
+public class DyingShapeBehavior : ShapeBehavior
 {
     Vector3 oriScale;
     float duration;
-    public override ShapeBehaviorType BehaviorType { get { return ShapeBehaviorType.Growing; } }
+    public override ShapeBehaviorType BehaviorType { get { return ShapeBehaviorType.Dying; } }
 
     public override bool GameUpdate(Shape shape)
     {
         if(shape.Age < duration)
         {
             float s = shape.Age / duration;
+            s = (3f - 2f * s) * s * s;//实现平滑增长，只是个数学公式
             shape.transform.localScale = s * oriScale;
             return true;        
         }
@@ -30,7 +31,7 @@ public class GrowingShapeBehavior : ShapeBehavior
 
     public override void Recycle()
     {
-        ShapeBehaviorPool<GrowingShapeBehavior>.Reclaim(this);
+        ShapeBehaviorPool<DyingShapeBehavior>.Reclaim(this);
     }
 
     public override void Save(GameDataWriter write)

@@ -36,6 +36,7 @@ public abstract class SpawnZone : PersistableObject {
             public FloatRange relativeScale;
             public FloatRange orbitRadius;//半径
             public FloatRange orbitFrequency;//速度
+            public bool uniformLifecycles;
         }
 
         public SatelliteConfiguration satellite;
@@ -45,8 +46,22 @@ public abstract class SpawnZone : PersistableObject {
         {
             [FloatRangeSlider(0f, 2f)]
             public FloatRange growingDuration;
+
+            [FloatRangeSlider(0f, 2f)]
+            public FloatRange dyingDuration;
+            [FloatRangeSlider(0f, 100f)]
+            public FloatRange adultDuration;
+
+            public Vector3 RandomDuration
+            {
+                get
+                {
+                    return new Vector3(growingDuration.RandomValueInRange, adultDuration.RandomValueInRange, dyingDuration.RandomValueInRange);
+                }
+            }
         }
         public LifecycleConfiguration lifecycle;
+       
     }
 
     [SerializeField]
@@ -96,13 +111,15 @@ public abstract class SpawnZone : PersistableObject {
 
 
         SetupOscillation(shape);
-        float growingDuraion = spwanConfig.lifecycle.growingDuration.RandomValueInRange;
+        // float growingDuraion = spwanConfig.lifecycle.growingDuration.RandomValueInRange;
+        Vector3 lifecycleDurations = spwanConfig.lifecycle.RandomDuration;
         int satelliteCnt = spwanConfig.satellite.amount.RandomValueInRange;
         for(int i = 0; i <satelliteCnt; i++)
         {
-            CreateSatelliteFor(shape, growingDuraion);
+            CreateSatelliteFor(shape, spwanConfig.satellite.uniformLifecycles ?
+                    lifecycleDurations : spwanConfig.lifecycle.RandomDuration);
         }
-        SetUpLifecycle(shape, growingDuraion);
+        SetUpLifecycle(shape, lifecycleDurations);
         // return shape;
     }
 
@@ -154,7 +171,7 @@ public abstract class SpawnZone : PersistableObject {
     /// 添加卫星
     /// </summary>
     /// <param name="focalShape"></param>
-    void CreateSatelliteFor(Shape focalShape,float growingDuration)
+    void CreateSatelliteFor(Shape focalShape, Vector3 lifecycleDurations)
     {
         int factoryIdx = Random.Range(0, spwanConfig.factories.Length);
         Shape shape = spwanConfig.factories[factoryIdx].GetRandom();
@@ -166,18 +183,37 @@ public abstract class SpawnZone : PersistableObject {
         //shape.AddBehavior<MovementShapeBehavior>().Velocity = Vector3.up;
         SetupColor(shape);
         shape.AddBehavior<SatelliteShapeBehavior>().Initialize(shape,focalShape,spwanConfig.satellite.orbitRadius.RandomValueInRange,spwanConfig.satellite.orbitFrequency.RandomValueInRange);
-        SetUpLifecycle(shape, growingDuration);
+        SetUpLifecycle(shape, lifecycleDurations);
     }
-    /// <summary>
-    /// 从scale 0到配置大小逐渐缩放
-    /// </summary>
-    /// <param name="shape"></param>
-    /// <param name="growingDuration"></param>
-    void SetUpLifecycle(Shape shape,float growingDuration)
+
+    void SetUpLifecycle(Shape shape, Vector3 durations)
     {
-        if(growingDuration > 0f)
+        if (durations.x > 0f)
         {
-            shape.AddBehavior<GrowingShapeBehavior>().Initiallize(shape, growingDuration);
+            if (durations.y > 0f || durations.z > 0f)
+            {
+                shape.AddBehavior<LifecycleShapeBehavior>().Initialize(
+                    shape, durations.x, durations.y, durations.z
+                );
+            }
+            else
+            {
+                shape.AddBehavior<GrowingShapeBehavior>().Initiallize(
+                    shape, durations.x
+                );
+            }
+        }
+        else if (durations.y > 0f)
+        {
+            shape.AddBehavior<LifecycleShapeBehavior>().Initialize(
+                shape, durations.x, durations.y, durations.z
+            );
+        }
+        else if (durations.z > 0f)
+        {
+            shape.AddBehavior<DyingShapeBehavior>().Initiallize(
+                shape, durations.z
+            );
         }
     }
 }

@@ -282,6 +282,23 @@ public class Shape : PersistableObject
     //    }
     //    return null;
     //}
+
+    public void Die()
+    {
+        Game.Ins.Kill(this);
+    }
+
+    public void MarkAsDying()
+    {
+        Game.Ins.MarkAsDying(this);
+    }
+    public bool IsMarkedAsDying
+    {
+        get
+        {
+            return Game.Ins.IsMarkedAsDying(this);
+        }
+    }
 }
 
 
