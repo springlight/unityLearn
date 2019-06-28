@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnZone : PersistableObject {
+public abstract class SpawnZone : GameLevelObject {
     
     [System.Serializable]
     public struct SpwanConfiguration
@@ -62,16 +62,21 @@ public abstract class SpawnZone : PersistableObject {
         }
         public LifecycleConfiguration lifecycle;
        
+
+
     }
 
     [SerializeField]
     SpwanConfiguration spwanConfig;
-   
+
     //[SerializeField]
     //SpawnMovementDirection spawnMovementDirection;
     //[SerializeField]
     //FloatRange spwanSpeed;
 
+    [SerializeField, Range(0f, 50f)]
+    float spawnSpeed;
+    float spawnProgress;
 	public abstract Vector3 SpawnPoint
     {
         get;
@@ -215,5 +220,25 @@ public abstract class SpawnZone : PersistableObject {
                 shape, durations.z
             );
         }
+    }
+
+    public override void GameUpdate()
+    {
+        spawnProgress += Time.deltaTime * spawnSpeed;
+        while(spawnProgress >= 1f)
+        {
+            spawnProgress -= 1f;
+            SpawnShape();
+        }
+    }
+
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(spawnProgress);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        spawnProgress = reader.ReadFloat();
     }
 }

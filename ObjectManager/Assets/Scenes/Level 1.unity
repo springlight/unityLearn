@@ -114,6 +114,76 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &598665458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 598665462}
+  - component: {fileID: 598665460}
+  - component: {fileID: 598665459}
+  - component: {fileID: 598665461}
+  m_Layer: 0
+  m_Name: KillZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &598665459
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598665458}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &598665460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598665458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3ff503e8e721f4ca5254aa44cb9acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dyingDuration: 0
+--- !u!135 &598665461
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598665458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &598665462
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598665458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793040929
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   populationLimit: 0
-  persistableObjects: []
   spawnZone: {fileID: 1724076888}
 --- !u!4 &1089235831
 Transform:
@@ -254,7 +323,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 82eeb54bfcaf4a645aada69153fe876a, type: 2}
     - {fileID: 11400000, guid: 82eeb54bfcaf4a645aada69153fe876a, type: 2}
     - {fileID: 11400000, guid: 20f80045f081bca41a430cbcccca2fca, type: 2}
-    movementDirection: 3
+    movementDirection: 1
     speed:
       min: 1.5
       max: 2.5
@@ -275,30 +344,38 @@ MonoBehaviour:
         min: 0.48980126
         max: 1
     uniformColor: 0
-    oscillationDirection: 2
+    oscillationDirection: 0
     oscillationAmplitude:
-      min: 0.1
-      max: 1
+      min: 0
+      max: 0
     oscillationFrequency:
-      min: 1
-      max: 1
+      min: 0
+      max: 0
     satellite:
       amount:
         min: 0
         max: 0
       relativeScale:
-        min: 0.24959333
-        max: 0.5062822
+        min: 0.1
+        max: 0.1
       orbitRadius:
-        min: 0.95
-        max: 2.04
+        min: 0
+        max: 0
       orbitFrequency:
-        min: 0.25
-        max: 0.5
+        min: 0
+        max: 0
+      uniformLifecycles: 0
     lifecycle:
       growingDuration:
-        min: 1
-        max: 1.7049983
+        min: 0
+        max: 0
+      dyingDuration:
+        min: 0
+        max: 0
+      adultDuration:
+        min: 0
+        max: 0
+  spawnSpeed: 9.5
   surfaceOnly: 0
 --- !u!4 &1724076889
 Transform:

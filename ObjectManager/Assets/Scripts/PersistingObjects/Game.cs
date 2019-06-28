@@ -24,7 +24,7 @@ public class Game : PersistableObject
     public SpawnZone SpawnZoneOfLevel { get; set; }
     private List<Shape> shapes;
     private List<ShapeInstance> killList, markAsDyingList;
-    private const int saveVersion = 6;
+    private const int saveVersion = 7;
     private string savePath;
     Random.State mainRandomState;
     [SerializeField]
@@ -146,6 +146,7 @@ public class Game : PersistableObject
         {
             shapes[i].GameUpdate();
         }
+        GameLevel.Cur.GameUpdate();
         inGameUpdateLoop = false;
         creationProgress += Time.deltaTime * CreationSpeed;
         while (creationProgress >= 1f)

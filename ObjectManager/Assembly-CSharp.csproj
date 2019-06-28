@@ -79,12 +79,16 @@
     <Compile Include="Assets\Scripts\PersistingObjects\Game.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\GameDataReader.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\GameDataWriter.cs" />
+    <Compile Include="Assets\Scripts\PersistingObjects\GameLevelObject.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\PersistableObject.cs" />
     <Compile Include="Assets\Scripts\PersistingObjects\PersistentStorage.cs" />
-    <Compile Include="Assets\Scripts\RotatingObject.cs" />
+    <Compile Include="Assets\Scripts\PersistingObjects\RotatingObject.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\CompositeSpawnZone.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\CubeSpawnZone.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\GameLevel.cs" />
+    <Compile Include="Assets\Scripts\SpawnZones\GameLevel.Editor.cs" />
+    <Compile Include="Assets\Scripts\SpawnZones\KillZone.cs" />
+    <Compile Include="Assets\Scripts\SpawnZones\LifeZone.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\SpawnZone.cs" />
     <Compile Include="Assets\Scripts\SpawnZones\SphereSpawnZone.cs" />
     <None Include="Assets\NewSurfaceShader.shader" />

@@ -324,6 +324,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82eeb54bfcaf4a645aada69153fe876a, type: 2}
   creationSpeedSlider: {fileID: 1972815103}
   destructionSpeedSlider: {fileID: 10130030}
+  destroyDuration: 0
 --- !u!4 &116833495
 Transform:
   m_ObjectHideFlags: 0

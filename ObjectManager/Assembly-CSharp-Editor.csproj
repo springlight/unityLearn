@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Editor\FloatRangeDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\FloatRangeSliderDrawer.cs" />
+    <Compile Include="Assets\Scripts\Editor\GameLevelInspector.cs" />
+    <Compile Include="Assets\Scripts\Editor\RegisterLevelObjectMenuItem.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/ObjectManager/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
