@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Rounded cube.unity
+- path: Assets/Scenes/RoundedCube.unity
   isLoaded: 1
   isActive: 1
