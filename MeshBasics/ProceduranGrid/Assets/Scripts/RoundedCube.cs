@@ -8,6 +8,7 @@ public class RoundedCube : MonoBehaviour
     public int roundness;
     private Vector3[] vertices;
     private Vector3[] normals;
+    private Color32[] cubeUV;
     private Mesh mesh;
     private void Awake()
     {
@@ -22,9 +23,51 @@ public class RoundedCube : MonoBehaviour
 
         CreateVertices();
         CreateTriangles();
+        CreateColliders();
 
 
+    }
 
+    private void CreateColliders()
+    {
+        AddBoxCollider(xSize, ySize - roundness * 2, zSize - roundness * 2);
+        AddBoxCollider(xSize - roundness * 2, ySize, zSize - roundness * 2);
+        AddBoxCollider(xSize - roundness * 2, ySize - roundness * 2, zSize);
+
+        Vector3 min = Vector3.one * roundness;
+        Vector3 half = new Vector3(xSize, ySize, zSize) * 0.5f;
+        Vector3 max = new Vector3(xSize, ySize, zSize) - min;
+
+        AddCapsuleCollider(0, half.x, min.y, min.z);
+        AddCapsuleCollider(0, half.x, min.y, max.z);
+        AddCapsuleCollider(0, half.x, max.y, min.z);
+        AddCapsuleCollider(0, half.x, max.y, max.z);
+
+        AddCapsuleCollider(1, min.x, half.y, min.z);
+        AddCapsuleCollider(1, min.x, half.y, max.z);
+        AddCapsuleCollider(1, max.x, half.y, min.z);
+        AddCapsuleCollider(1, max.x, half.y, max.z);
+
+        AddCapsuleCollider(2, min.x, min.y, half.z);
+        AddCapsuleCollider(2, min.x, max.y, half.z);
+        AddCapsuleCollider(2, max.x, min.y, half.z);
+        AddCapsuleCollider(2, max.x, max.y, half.z);
+    }
+
+
+    private void AddCapsuleCollider(int dir,float x,float y,float z)
+    {
+        CapsuleCollider c = gameObject.AddComponent<CapsuleCollider>();
+        c.center = new Vector3(x, y, z);
+        c.direction = dir;
+        c.radius = roundness;
+        c.height = c.center[dir] * 2f;
+    }
+
+    private void AddBoxCollider(float x,float y,float z)
+    {
+        BoxCollider c = gameObject.AddComponent<BoxCollider>();
+        c.size = new Vector3(x, y, z);
     }
     /// <summary>
     /// 创建顶点
@@ -40,6 +83,7 @@ public class RoundedCube : MonoBehaviour
 
         vertices = new Vector3[cornerVertices + edgeVertices + faceVertices];//顶点个数
         normals = new Vector3[vertices.Length];
+        cubeUV = new Color32[vertices.Length];
         int v = 0;
         for (int y = 0; y <= ySize; y++)
         {
@@ -88,6 +132,7 @@ public class RoundedCube : MonoBehaviour
         }
         mesh.vertices = vertices;
         mesh.normals = normals;
+        mesh.colors32 = cubeUV;
     }
 
     private void SetVertex(int i,int x,int y,int z)
@@ -121,12 +166,16 @@ public class RoundedCube : MonoBehaviour
         }
         normals[i] = (vertices[i] - inner).normalized;
         vertices[i] = inner + normals[i] * roundness;
+        cubeUV[i] = new Color32((byte)x, (byte)y, (byte)z,0);
     }
     /// <summary>
     /// 创建三角形
     /// </summary>
     private void CreateTriangles()
     {
+        int[] triangleZ = new int[(xSize * ySize) * 12];
+        int[] triangleX = new int[(ySize * zSize) * 12];
+        int[] triangleY = new int[(xSize * zSize) * 12];
         //面数
         int quads = (xSize * ySize + xSize * zSize + ySize * zSize) * 2;
         //一个面两个三角形，六个点
@@ -134,19 +183,44 @@ public class RoundedCube : MonoBehaviour
         int ring = (xSize + zSize) * 2;
         int t = 0;
         int v = 0;
+        int tZ = 0;
+        int tX = 0;
+        int tY = 0;
         //四周的环
         for(int y = 0; y < ySize; y++, v++)
         {
-            for (int q = 0; q < ring - 1; q++, v++)
+            for(int q = 0; q < xSize; q++, v++)
             {
-                t = SetQuad(triangles, t, v, v + 1, v + ring, v + ring + 1);
+                tZ = SetQuad(triangleZ, tZ, v, v + 1, v + ring, v + ring + 1);
             }
-            //最后一块
-            t = SetQuad(triangles, t, v, v - ring + 1, v + ring, v + 1);
+
+            for(int q =0; q < zSize; q++, v++)
+            {
+                tX = SetQuad(triangleX, tX, v, v + 1, v + ring, v + ring + 1);
+            }
+            for(int q =0;q < xSize; q++, v++)
+            {
+                tZ = SetQuad(triangleZ, tZ, v, v + 1, v + ring, v + ring + 1);
+            }
+            for (int q = 0; q < zSize - 1; q++, v++)
+            {
+                tX = SetQuad(triangleX, tX, v, v + 1, v + ring, v + ring + 1);
+            }
+            tX = SetQuad(triangleX, tX, v, v - ring + 1, v + ring, v + 1);
+            //for (int q = 0; q < ring - 1; q++, v++)
+            //{
+            //    t = SetQuad(triangles, t, v, v + 1, v + ring, v + ring + 1);
+            //}
+            ////最后一块
+            //t = SetQuad(triangles, t, v, v - ring + 1, v + ring, v + 1);
         }
-        t = CreateTopFace(triangles, t, ring);
-        t = CreateBottomFace(triangles, t, ring);
-        mesh.triangles = triangles;
+        tY = CreateTopFace(triangleY, tY, ring);
+        tY = CreateBottomFace(triangleY, tY, ring);
+        mesh.subMeshCount = 3;
+        mesh.SetTriangles(triangleZ, 0);
+        mesh.SetTriangles(triangleX, 1);
+        mesh.SetTriangles(triangleY, 2);
+        //mesh.triangles = triangles;
     }
     /// <summary>
     /// 计算上面
