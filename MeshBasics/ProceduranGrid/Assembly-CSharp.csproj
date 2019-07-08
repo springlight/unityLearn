@@ -60,10 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Grid.cs" />
+    <Compile Include="Assets\MeshDeformer.cs" />
     <Compile Include="Assets\Scripts\CircleGizmo.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\CubeSphere.cs" />
     <Compile Include="Assets\Scripts\Grid2.cs" />
+    <Compile Include="Assets\Scripts\MeshDeformerInput.cs" />
     <Compile Include="Assets\Scripts\RoundedCube.cs" />
     <None Include="Assets\CubeGrid.shader" />
     <Reference Include="UnityEditor.StandardEvents">

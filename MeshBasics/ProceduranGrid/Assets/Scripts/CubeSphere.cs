@@ -269,8 +269,8 @@ public class CubeSphere : MonoBehaviour
         {
             Gizmos.color = Color.black;
             Gizmos.DrawSphere(vertices[i], 0.1f);
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawRay(vertices[i], normals[i]);
+            //Gizmos.color = Color.yellow;
+            //Gizmos.DrawRay(vertices[i], normals[i]);
         }
     }
 
