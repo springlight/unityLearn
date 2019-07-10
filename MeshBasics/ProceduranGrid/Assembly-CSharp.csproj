@@ -59,14 +59,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraTransformation.cs" />
     <Compile Include="Assets\Grid.cs" />
     <Compile Include="Assets\MeshDeformer.cs" />
+    <Compile Include="Assets\PositionTransformation.cs" />
+    <Compile Include="Assets\RotationTransformation.cs" />
+    <Compile Include="Assets\ScaleTransformation.cs" />
     <Compile Include="Assets\Scripts\CircleGizmo.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\CubeSphere.cs" />
     <Compile Include="Assets\Scripts\Grid2.cs" />
     <Compile Include="Assets\Scripts\MeshDeformerInput.cs" />
     <Compile Include="Assets\Scripts\RoundedCube.cs" />
+    <Compile Include="Assets\Transformation.cs" />
+    <Compile Include="Assets\TransformationGrid.cs" />
     <None Include="Assets\CubeGrid.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/MeshBasics/ProceduranGrid/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
