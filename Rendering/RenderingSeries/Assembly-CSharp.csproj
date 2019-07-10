@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Matrices\ScaleTransformation.cs" />
     <Compile Include="Assets\Scripts\Matrices\Transformation.cs" />
     <Compile Include="Assets\Scripts\Matrices\TransformationGrid.cs" />
+    <None Include="Assets\Shader\My First Shader.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/Rendering/RenderingSeries/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

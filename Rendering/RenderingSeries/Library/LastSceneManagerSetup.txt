@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Matrices.unity
+- path: Assets/Scenes/Shader Fundamentals.unity
   isLoaded: 1
   isActive: 1
