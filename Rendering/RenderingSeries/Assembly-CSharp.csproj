@@ -67,14 +67,19 @@
     <Compile Include="Assets\Scripts\Matrices\TransformationGrid.cs" />
     <None Include="Assets\Shader\TexturedWithDetail.shader" />
     <None Include="Assets\Shader\TextureSplatting.shader" />
+    <None Include="Assets\Shader\FirstLight.shader" />
     <None Include="Assets\Shader\DiffuseVertexLevel.shader" />
+    <None Include="Assets\Shaders\My First Shader.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />
+    <None Include="Assets\Shaders\Texture Splatting.shader" />
     <None Include="Assets\Shader\SpecularVertexLv.shader" />
     <None Include="Assets\Shader\SpecularPixedLevel.shader" />
     <None Include="Assets\Shader\NormalMapWorldSapce.shader" />
+    <None Include="Assets\Shaders\My First Lighting Shader.shader" />
     <None Include="Assets\Shader\My First Shader.shader" />
     <None Include="Assets\Shader\DiffusePixelLevel.shader" />
     <None Include="Assets\Shader\SingleTexture.shader" />
+    <None Include="Assets\Shaders\Textured With Detail.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/Rendering/RenderingSeries/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
