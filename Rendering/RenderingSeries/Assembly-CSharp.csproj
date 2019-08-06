@@ -70,9 +70,12 @@
     <None Include="Assets\Shader\FirstLight.shader" />
     <None Include="Assets\Shader\DiffuseVertexLevel.shader" />
     <None Include="Assets\Shaders\My First Shader.shader" />
+    <None Include="Assets\Shader\MyAlphaTest.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />
+    <None Include="Assets\Shader\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shaders\Texture Splatting.shader" />
     <None Include="Assets\Shader\SpecularVertexLv.shader" />
+    <None Include="Assets\Shader\MyBlend.shader" />
     <None Include="Assets\Shader\SpecularPixedLevel.shader" />
     <None Include="Assets\Shader\Loading.shader" />
     <None Include="Assets\Shader\NormalMapWorldSapce.shader" />

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Loading.unity
+- path: Assets/Scenes/AlphaBlendZWrite_8_3.unity
   isLoaded: 1
   isActive: 1
