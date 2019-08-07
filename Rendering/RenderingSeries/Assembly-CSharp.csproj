@@ -71,7 +71,9 @@
     <None Include="Assets\Shader\DiffuseVertexLevel.shader" />
     <None Include="Assets\Shaders\My First Shader.shader" />
     <None Include="Assets\Shader\MyAlphaTest.shader" />
+    <None Include="Assets\Shader\MoreLights.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />
+    <None Include="Assets\Shaders\My Lighting.cginc" />
     <None Include="Assets\Shader\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shaders\Texture Splatting.shader" />
     <None Include="Assets\Shader\SpecularVertexLv.shader" />
@@ -82,6 +84,7 @@
     <None Include="Assets\Shaders\My First Lighting Shader.shader" />
     <None Include="Assets\Shader\My First Shader.shader" />
     <None Include="Assets\Shader\DiffusePixelLevel.shader" />
+    <None Include="Assets\Shader\MyLighting.cginc" />
     <None Include="Assets\Shader\SingleTexture.shader" />
     <None Include="Assets\Shader\Flow.shader" />
     <None Include="Assets\Shader\Wave.shader" />
