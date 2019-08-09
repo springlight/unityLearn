@@ -18,6 +18,8 @@
 
 			#pragma target 3.0
 
+			#pragma multi_compile _ VERTEXLIGHT_ON
+
 			#pragma vertex MyVertexProgram
 			#pragma fragment MyFragmentProgram
 
@@ -38,7 +40,7 @@
 
 			#pragma target 3.0
 
-			#pragma multi_compile DIRECTIONAL POINT SPOT
+			#pragma multi_compile_fwdadd
 
 			#pragma vertex MyVertexProgram
 			#pragma fragment MyFragmentProgram
