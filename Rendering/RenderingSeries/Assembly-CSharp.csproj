@@ -73,6 +73,7 @@
     <None Include="Assets\Shader\MyAlphaTest.shader" />
     <None Include="Assets\Shader\MoreLights.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />
+    <None Include="Assets\Shader\Shadow.shader" />
     <None Include="Assets\Shaders\My Lighting.cginc" />
     <None Include="Assets\Shader\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shaders\Texture Splatting.shader" />

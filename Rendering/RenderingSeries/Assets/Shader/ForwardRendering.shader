@@ -115,7 +115,7 @@
 
 		#ifdef USING_DIRECTIONAL_LIGHT
 
-						float atten = 1.0;
+					 atten = 1.0;
 		#else	
 			#if defined(POINT)
 						//得到光源空间上的坐标
@@ -134,5 +134,5 @@
 				ENDCG
 			}
 		}
-	
+		Fallback "Specular"
 }
