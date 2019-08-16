@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Matrices\TransformationGrid.cs" />
     <None Include="Assets\Shader\TexturedWithDetail.shader" />
     <None Include="Assets\Shader\TextureSplatting.shader" />
+    <None Include="Assets\Shader\Common\BumpedDiffuse.shader" />
     <None Include="Assets\Shader\FirstLight.shader" />
     <None Include="Assets\Shader\DiffuseVertexLevel.shader" />
     <None Include="Assets\Shaders\My First Shader.shader" />
@@ -94,6 +95,7 @@
     <None Include="Assets\Shader\SingleTexture.shader" />
     <None Include="Assets\Shader\Flow.shader" />
     <None Include="Assets\Shader\Wave.shader" />
+    <None Include="Assets\Shader\Common\BumpedSpecular.shader" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/Rendering/RenderingSeries/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
