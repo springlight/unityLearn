@@ -59,6 +59,7 @@
 			float row = floor(time / _HorizontalAmount);
 			float column = time - row * _VerticalAmount;
 			half2 uv = i.uv + half2(column, -row);
+			//每次只显示宽度的1/8和高度的1/8
 			uv.x /= _HorizontalAmount;
 			uv.y /= _VerticalAmount;
 			fixed4 c = tex2D(_MainTex, uv);
