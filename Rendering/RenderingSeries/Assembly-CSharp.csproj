@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BrightnessSaturationAndContrast.cs" />
+    <Compile Include="Assets\Scripts\EdgeCheck.cs" />
     <Compile Include="Assets\Scripts\Matrices\CameraTransformation.cs" />
     <Compile Include="Assets\Scripts\Matrices\PositionTransformation.cs" />
     <Compile Include="Assets\Scripts\Matrices\RotationTransformation.cs" />
@@ -91,6 +92,7 @@
     <None Include="Assets\Shader\NormalMapWorldSapce.shader" />
     <None Include="Assets\Shader\ForwardRendering.shader" />
     <None Include="Assets\Shader\My First Lighting Shader.shader" />
+    <None Include="Assets\Shader\EdgeCheck.shader" />
     <None Include="Assets\Shader\Refection2.shader" />
     <None Include="Assets\Shader\My First Shader.shader" />
     <None Include="Assets\Shader\BrightnessSaturationAndConstrast.shader" />
