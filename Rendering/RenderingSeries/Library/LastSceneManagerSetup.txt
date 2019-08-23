@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/EdgeCheck.unity
+- path: Assets/Scenes/GaoSi.unity
   isLoaded: 1
   isActive: 1

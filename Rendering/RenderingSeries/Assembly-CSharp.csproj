@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BrightnessSaturationAndContrast.cs" />
     <Compile Include="Assets\Scripts\EdgeCheck.cs" />
+    <Compile Include="Assets\Scripts\GaussianBlur.cs" />
     <Compile Include="Assets\Scripts\Matrices\CameraTransformation.cs" />
     <Compile Include="Assets\Scripts\Matrices\PositionTransformation.cs" />
     <Compile Include="Assets\Scripts\Matrices\RotationTransformation.cs" />
