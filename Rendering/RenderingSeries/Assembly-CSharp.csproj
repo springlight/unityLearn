@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bloom.cs" />
     <Compile Include="Assets\Scripts\BrightnessSaturationAndContrast.cs" />
     <Compile Include="Assets\Scripts\EdgeCheck.cs" />
     <Compile Include="Assets\Scripts\GaussianBlur.cs" />
@@ -74,6 +75,7 @@
     <None Include="Assets\Shader\TextureSplatting.shader" />
     <None Include="Assets\Shader\Common\BumpedDiffuse.shader" />
     <None Include="Assets\Shader\FirstLight.shader" />
+    <None Include="Assets\Shader\Dissolve.shader" />
     <None Include="Assets\Shader\DiffuseVertexLevel.shader" />
     <None Include="Assets\Shaders\My First Shader.shader" />
     <None Include="Assets\Shader\MyAlphaTest.shader" />
@@ -86,6 +88,7 @@
     <None Include="Assets\Shaders\Texture Splatting.shader" />
     <None Include="Assets\Shader\RefractRaionShader.shader" />
     <None Include="Assets\Shader\SpecularVertexLv.shader" />
+    <None Include="Assets\Shader\Bloom.shader" />
     <None Include="Assets\Shader\ScrollingBackground.shader" />
     <None Include="Assets\Shader\MyBlend.shader" />
     <None Include="Assets\Shader\SpecularPixedLevel.shader" />
@@ -104,6 +107,7 @@
     <None Include="Assets\Shader\SingleTexture.shader" />
     <None Include="Assets\Shader\Flow.shader" />
     <None Include="Assets\Shader\ImageSequenceAnimation.shader" />
+    <None Include="Assets\Shader\GasoSi.shader" />
     <None Include="Assets\Shader\Wave.shader" />
     <None Include="Assets\Shader\Common\BumpedSpecular.shader" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
