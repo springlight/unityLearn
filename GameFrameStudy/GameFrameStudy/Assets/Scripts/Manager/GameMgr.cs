@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Common;
+using UnityEngine;
 
 namespace Assets.Manager
 {
@@ -7,6 +8,15 @@ namespace Assets.Manager
         private void Start()
         {
             AddManager();
+            DontDestroyOnLoad(this);
+        }        
+        public void InitGui()
+        {
+            GameObject gameObject = IO.Gui;
+            if(gameObject == null)
+            {
+                
+            }
         }
 
         private void AddManager()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Common;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -85,10 +86,28 @@ public class Util
         }
     }
 
+
+
     public static void ClearMemory()
     {
         GC.Collect();
         //清空资源
         Resources.UnloadUnusedAssets();
+    }
+
+    public static GameObject LoadPrefab(string path)
+    {
+        return Resource.LoadPrefab(path);
+    }
+
+    public static string LoadText(string path,string ext)
+    {
+        return Resource.LoadTextFile(path, ext);
+    }
+
+
+    public static Texture2D LoadTexture2d(string path)
+    {
+        return Resource.LoadTexture(path);
     }
 }

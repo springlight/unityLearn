@@ -52,16 +52,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>F:\SoftInstall\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+      <HintPath>D:\softinstall\unity201801\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>F:\SoftInstall\Unity\Editor\Data\Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:\softinstall\unity201801\Editor\Data\Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Common\Const.cs" />
     <Compile Include="Assets\Scripts\Common\GlobalGenerator.cs" />
     <Compile Include="Assets\Scripts\Common\IO.cs" />
+    <Compile Include="Assets\Scripts\Common\Resource.cs" />
     <Compile Include="Assets\Scripts\Common\Util.cs" />
     <Compile Include="Assets\Scripts\Manager\DialogMgr.cs" />
     <Compile Include="Assets\Scripts\Manager\GameMgr.cs" />
@@ -69,242 +70,245 @@
     <Compile Include="Assets\Scripts\Manager\PanelMgr.cs" />
     <Compile Include="Assets\Scripts\UI\Dialog\DialogType.cs" />
     <Compile Include="Assets\Scripts\UI\UIContainer.cs" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Work/study/unity/GameFrameStudy/GameFrameStudy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Work/study/unity/GameFrameStudy/GameFrameStudy/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>F:/study/unity/unityLearn/GameFrameStudy/GameFrameStudy/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>F:/study/unity/unityLearn/GameFrameStudy/GameFrameStudy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ARModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.BaselibModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CloudWebServicesModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.FacebookModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GridModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticlesLegacyModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTrackingModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StyleSheetsModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TLSModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TimelineModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UNETModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VRModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WebModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WebModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.WebModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XRModule">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Locator">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceTesting">
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/PerformanceTesting/UnityEngine.PerformanceTesting.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Timeline">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIAutomation">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/浪子/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/CoderMonkey/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/浪子/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/CoderMonkey/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/浪子/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/CoderMonkey/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Core.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll</HintPath>
     </Reference>
     <Reference Include="UnityScript">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.dll</HintPath>
     </Reference>
     <Reference Include="UnityScript.Lang">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Boo.Lang">
-      <HintPath>F:/SoftInstall/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
+      <HintPath>D:/softinstall/unity201801/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
