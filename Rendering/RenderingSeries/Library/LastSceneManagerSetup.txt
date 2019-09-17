@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Shader/Cutoff/CutOff.unity
+  isLoaded: 1
+  isActive: 1
