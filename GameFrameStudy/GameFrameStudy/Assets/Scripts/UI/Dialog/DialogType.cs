@@ -10,7 +10,7 @@ namespace Assets.UI.Dialog
         Character,
         Main,
         World,
-        Dupicate,//副本
+        Duplicate,//副本
         Fight,
         Bag,
         Mail,

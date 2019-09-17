@@ -1,4 +1,5 @@
 ﻿using Assets.Common;
+using Assets.Scripts.Common;
 using UnityEngine;
 
 namespace Assets.Manager
@@ -15,15 +16,17 @@ namespace Assets.Manager
             GameObject gameObject = IO.Gui;
             if(gameObject == null)
             {
-                
+                GameObject original = Util.LoadPrefab(Const.PanelPrefabDir + "MainUI.prefab");
+                gameObject = Instantiate(original) as GameObject;
+                gameObject.name = "MainUI";
             }
         }
 
         private void AddManager()
         {
-            Util.AddComponent<DialogMgr>(this.gameObject);
-            Util.AddComponent<PanelMgr>(this.gameObject);
-            Util.AddComponent<MusicMgr>(this.gameObject);
+            Util.AddComponent<DialogMgr>(gameObject);
+            Util.AddComponent<PanelMgr>(gameObject);
+            Util.AddComponent<MusicMgr>(gameObject);
         }
     }
 }

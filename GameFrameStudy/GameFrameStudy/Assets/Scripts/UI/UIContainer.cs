@@ -12,7 +12,7 @@ namespace Assets.UI
         public GameObject duplicatePanel;
         public GameObject worldPanel;
         public GameObject taskPanel;
-
+        public GameObject characterPanel;
         public List<GameObject> panels = new List<GameObject>();
         public List<GameObject> allPanels
         {
@@ -25,6 +25,7 @@ namespace Assets.UI
                 AddPanel(duplicatePanel);
                 AddPanel(worldPanel);
                 AddPanel(taskPanel);
+                AddPanel(this.characterPanel);
                 return panels;
             }
         }
