@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Shader/Cutoff/CutOff.unity
+- path: Assets/Shader/Transparency/Transparency.unity
   isLoaded: 1
   isActive: 1

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Teddy Bear Bazooka.unity
+- path: Assets/Inverse Kinematics Example.unity
   isLoaded: 1
   isActive: 1

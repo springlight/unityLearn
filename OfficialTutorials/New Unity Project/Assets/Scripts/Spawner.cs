@@ -24,7 +24,7 @@ public class Spawner: MonoBehaviour {
 
     void Update()
     {
-        if(count < 200)
+        if(count < 5)
         {
             bool alt = Input.GetButton("Fire1");
 

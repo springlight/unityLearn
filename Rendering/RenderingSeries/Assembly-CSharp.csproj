@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\TangentSpaceVisualizer.cs" />
     <Compile Include="Assets\Shader\ShadingInWorldSpace\ShadingInWorldSpace.cs" />
     <None Include="Assets\Shader\TexturedWithDetail.shader" />
+    <None Include="Assets\Shader\Transparency\Cube.shader" />
     <None Include="Assets\Shader\TextureSplatting.shader" />
     <None Include="Assets\Shader\Common\BumpedDiffuse.shader" />
     <None Include="Assets\Shader\FirstLight.shader" />
@@ -83,6 +84,7 @@
     <None Include="Assets\Shader\MoreLights.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />
     <None Include="Assets\Shader\Shadow.shader" />
+    <None Include="Assets\Shader\Transparency\Spere.shader" />
     <None Include="Assets\Shader\Cutoff\CutOff.shader" />
     <None Include="Assets\Shader\My Frist Lighting NormalMapShader.shader" />
     <None Include="Assets\Shaders\My Lighting.cginc" />
