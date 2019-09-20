@@ -15,7 +15,7 @@
 			return UnityObjectToClipPos(vertexPos);
 		}
 	float4 frag(void) :COLOR{
-		return float4(1.0,0.0,0.0,1.0);
+		return float4(0.0,1.0,0.0,1.0);
 		}
 			ENDCG
 		}

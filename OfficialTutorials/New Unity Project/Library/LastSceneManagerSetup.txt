@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Inverse Kinematics Example.unity
+- path: Assets/_Scenes/MyCrowd.unity
   isLoaded: 1
   isActive: 1
