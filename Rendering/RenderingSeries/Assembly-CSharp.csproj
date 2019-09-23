@@ -99,6 +99,7 @@
     <None Include="Assets\Shader\SpecularPixedLevel.shader" />
     <None Include="Assets\Shader\Loading.shader" />
     <None Include="Assets\Shader\NormalMapWorldSapce.shader" />
+    <None Include="Assets\Shader\Transparency\AlphaTest.shader" />
     <None Include="Assets\Shader\Cutoff\TwoPassesUsingDiscard.shader" />
     <None Include="Assets\Shader\ForwardRendering.shader" />
     <None Include="Assets\Shader\My First Lighting Shader.shader" />
@@ -106,6 +107,7 @@
     <None Include="Assets\Shader\Refection2.shader" />
     <None Include="Assets\Shader\ShadingInWorldSpace\ShadingInWorldSpace.shader" />
     <None Include="Assets\Shader\My First Shader.shader" />
+    <None Include="Assets\Shader\Transparency\AlphaBlend.shader" />
     <None Include="Assets\Shader\BrightnessSaturationAndConstrast.shader" />
     <None Include="Assets\Shader\FresneFlection.shader" />
     <None Include="Assets\Shader\DiffusePixelLevel.shader" />
