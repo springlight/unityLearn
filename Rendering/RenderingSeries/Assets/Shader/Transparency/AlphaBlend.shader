@@ -10,7 +10,7 @@
 
 		Pass
 		{
-		ZWrite On
+		ZWrite Off
 		Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
 			#pragma vertex vert
