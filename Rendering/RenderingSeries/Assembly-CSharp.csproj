@@ -118,6 +118,7 @@
     <None Include="Assets\Shader\MyLighting.cginc" />
     <None Include="Assets\Shader\SingleTexture.shader" />
     <None Include="Assets\Shader\Flow.shader" />
+    <None Include="Assets\Shader\Transparency\SilhousetteEnhancement.shader" />
     <None Include="Assets\Shader\ImageSequenceAnimation.shader" />
     <None Include="Assets\Shader\GasoSi.shader" />
     <None Include="Assets\Shader\Wave.shader" />
