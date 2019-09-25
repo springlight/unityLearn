@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\TangentSpaceVisualizer.cs" />
     <Compile Include="Assets\Shader\ShadingInWorldSpace\ShadingInWorldSpace.cs" />
     <None Include="Assets\Shader\TexturedWithDetail.shader" />
+    <None Include="Assets\Shader\Transparency\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shader\Transparency\Cube.shader" />
     <None Include="Assets\Shader\TextureSplatting.shader" />
     <None Include="Assets\Shader\Common\BumpedDiffuse.shader" />
@@ -113,6 +114,7 @@
     <None Include="Assets\Shader\DiffusePixelLevel.shader" />
     <None Include="Assets\Shader\RgbCube\GrbCube.shader" />
     <None Include="Assets\Shader\Reflection.shader" />
+    <None Include="Assets\Shader\Transparency\AlphaBlendBothSided.shader" />
     <None Include="Assets\Shader\MyLighting.cginc" />
     <None Include="Assets\Shader\SingleTexture.shader" />
     <None Include="Assets\Shader\Flow.shader" />
