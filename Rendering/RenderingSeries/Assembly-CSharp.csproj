@@ -81,6 +81,7 @@
     <None Include="Assets\Shader\Dissolve.shader" />
     <None Include="Assets\Shader\DiffuseVertexLevel.shader" />
     <None Include="Assets\Shaders\My First Shader.shader" />
+    <None Include="Assets\Shader\Lighting\diffuselighting.shader" />
     <None Include="Assets\Shader\MyAlphaTest.shader" />
     <None Include="Assets\Shader\MoreLights.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />

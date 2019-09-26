@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Shader/Transparency/Transparency.unity
+- path: Assets/Shader/Lighting/Lighting.unity
   isLoaded: 1
   isActive: 1
