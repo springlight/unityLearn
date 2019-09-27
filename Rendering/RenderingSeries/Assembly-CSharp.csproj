@@ -93,6 +93,7 @@
     <None Include="Assets\Shader\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shaders\Texture Splatting.shader" />
     <None Include="Assets\Shader\RefractRaionShader.shader" />
+    <None Include="Assets\Shader\Lighting\specularlighting.shader" />
     <None Include="Assets\Shader\SpecularVertexLv.shader" />
     <None Include="Assets\Shader\Transparency\Transparencyadditive.shader" />
     <None Include="Assets\Shader\Bloom.shader" />

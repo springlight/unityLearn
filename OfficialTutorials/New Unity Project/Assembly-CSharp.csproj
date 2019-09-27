@@ -63,6 +63,7 @@
     <Compile Include="Assets\_Scripts\CameraMover.cs" />
     <Compile Include="Assets\_Scripts\CrowdSimulation\CrowdMovement.cs" />
     <Compile Include="Assets\_Scripts\CrowdSimulation\PlayerGenerator.cs" />
+    <Compile Include="Assets\_Scripts\IK\MyIK.cs" />
     <Compile Include="Assets\Locomotion\Scripts\Locomotion.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
     <Compile Include="Assets\Scripts\AnimatorController_UI.cs" />

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/MyCrowd.unity
+- path: Assets/_Scenes/MyIK.unity
   isLoaded: 1
   isActive: 1
