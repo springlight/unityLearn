@@ -116,6 +116,7 @@
     <None Include="Assets\Shader\DiffusePixelLevel.shader" />
     <None Include="Assets\Shader\RgbCube\GrbCube.shader" />
     <None Include="Assets\Shader\Reflection.shader" />
+    <None Include="Assets\Shader\Lighting\twosidelighting.shader" />
     <None Include="Assets\Shader\Transparency\AlphaBlendBothSided.shader" />
     <None Include="Assets\Shader\MyLighting.cginc" />
     <None Include="Assets\Shader\SingleTexture.shader" />
