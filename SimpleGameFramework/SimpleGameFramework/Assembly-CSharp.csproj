@@ -62,10 +62,18 @@
     <Compile Include="Assets\Scripts\Base\FrameWorkEntry.cs" />
     <Compile Include="Assets\Scripts\Base\MgrBase.cs" />
     <Compile Include="Assets\Scripts\Base\ScripSingleton.cs" />
+    <Compile Include="Assets\Scripts\DataNode\DataNode.cs" />
+    <Compile Include="Assets\Scripts\DataNode\DataNodeMgr.cs" />
     <Compile Include="Assets\Scripts\Fsm\Fsm.cs" />
     <Compile Include="Assets\Scripts\Fsm\FsmMgr.cs" />
     <Compile Include="Assets\Scripts\Fsm\FsmState.cs" />
     <Compile Include="Assets\Scripts\Fsm\IFsm.cs" />
+    <Compile Include="Assets\Scripts\ProcedureBase\ProcedureBase.cs" />
+    <Compile Include="Assets\Scripts\ProcedureBase\ProcedureMgr.cs" />
+    <Compile Include="Assets\Scripts\Test\Procedure\ProcedureOver.cs" />
+    <Compile Include="Assets\Scripts\Test\Procedure\ProcedurePlay.cs" />
+    <Compile Include="Assets\Scripts\Test\Procedure\ProcedureStart.cs" />
+    <Compile Include="Assets\Scripts\Test\Procedure\ProcedureTestMain.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>G:/study/unity/SimpleGameFramework/SimpleGameFramework/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -127,6 +127,7 @@
     <None Include="Assets\Shader\Wave.shader" />
     <None Include="Assets\Shader\Common\BumpedSpecular.shader" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
+    <None Include="Assets\Shader\Lighting\perpixellighting.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/Rendering/RenderingSeries/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

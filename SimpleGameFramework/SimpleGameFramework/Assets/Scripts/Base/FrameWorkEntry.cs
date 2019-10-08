@@ -48,6 +48,7 @@ public class FrameWorkEntry : ScripSingleton<FrameWorkEntry>
 
     private MgrBase CreateMgr(Type mgrType)
     {
+        Debug.LogError("[CreateMgr]---- mgrType is {0}" + mgrType.FullName);
         MgrBase mgr = (MgrBase)Activator.CreateInstance(mgrType);
         if(mgr == null)
         {
