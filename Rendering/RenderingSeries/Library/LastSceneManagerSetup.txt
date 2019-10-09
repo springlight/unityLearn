@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Shader/Lighting/Lighting.unity
+- path: Assets/Shader/BasicTexturing/texturesphere.unity
   isLoaded: 1
   isActive: 1
