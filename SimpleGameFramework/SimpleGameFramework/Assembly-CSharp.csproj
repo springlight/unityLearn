@@ -74,11 +74,17 @@
     <Compile Include="Assets\Scripts\Fsm\FsmMgr.cs" />
     <Compile Include="Assets\Scripts\Fsm\FsmState.cs" />
     <Compile Include="Assets\Scripts\Fsm\IFsm.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\IObjectPool.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\ObjectBase.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\ObjectPoolMgr.cs" />
     <Compile Include="Assets\Scripts\ProcedureBase\ProcedureBase.cs" />
     <Compile Include="Assets\Scripts\ProcedureBase\ProcedureMgr.cs" />
     <Compile Include="Assets\Scripts\Test\DataNode\DataNodeTestMain.cs" />
     <Compile Include="Assets\Scripts\Test\Event\EventTestAgrs.cs" />
     <Compile Include="Assets\Scripts\Test\Event\EventTestMain.cs" />
+    <Compile Include="Assets\Scripts\Test\ObjectPool\ObjectPoolTestMain.cs" />
+    <Compile Include="Assets\Scripts\Test\ObjectPool\TestObject.cs" />
     <Compile Include="Assets\Scripts\Test\Procedure\ProcedureOver.cs" />
     <Compile Include="Assets\Scripts\Test\Procedure\ProcedurePlay.cs" />
     <Compile Include="Assets\Scripts\Test\Procedure\ProcedureStart.cs" />
