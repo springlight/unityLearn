@@ -90,6 +90,7 @@
     <None Include="Assets\Shader\Transparency\Spere.shader" />
     <None Include="Assets\Shader\Cutoff\CutOff.shader" />
     <None Include="Assets\Shader\My Frist Lighting NormalMapShader.shader" />
+    <None Include="Assets\Shader\BasicTexturing\lightingwithtexture.shader" />
     <None Include="Assets\Shaders\My Lighting.cginc" />
     <None Include="Assets\Shader\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shaders\Texture Splatting.shader" />

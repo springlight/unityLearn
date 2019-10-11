@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SuperScrollView/Demo/Scenes/PageViewDemo.unity
+- path: Assets/SuperScrollView/Demo/Scenes/TreeViewDemo.unity
   isLoaded: 1
   isActive: 1
