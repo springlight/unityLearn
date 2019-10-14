@@ -113,6 +113,7 @@
     <None Include="Assets\Shader\ShadingInWorldSpace\ShadingInWorldSpace.shader" />
     <None Include="Assets\Shader\My First Shader.shader" />
     <None Include="Assets\Shader\Transparency\AlphaBlend.shader" />
+    <None Include="Assets\Shader\BasicTexturing\GlossyTexture.shader" />
     <None Include="Assets\Shader\BrightnessSaturationAndConstrast.shader" />
     <None Include="Assets\Shader\FresneFlection.shader" />
     <None Include="Assets\Shader\DiffusePixelLevel.shader" />
