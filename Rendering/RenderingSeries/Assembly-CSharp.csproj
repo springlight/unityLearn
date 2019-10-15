@@ -91,6 +91,7 @@
     <None Include="Assets\Shader\Cutoff\CutOff.shader" />
     <None Include="Assets\Shader\My Frist Lighting NormalMapShader.shader" />
     <None Include="Assets\Shader\BasicTexturing\lightingwithtexture.shader" />
+    <None Include="Assets\Shader\BasicTexturing\blendingalphadiscard.shader" />
     <None Include="Assets\Shaders\My Lighting.cginc" />
     <None Include="Assets\Shader\AlphaBlendZWrite.shader" />
     <None Include="Assets\Shaders\Texture Splatting.shader" />
@@ -111,6 +112,7 @@
     <None Include="Assets\Shader\EdgeCheck.shader" />
     <None Include="Assets\Shader\Refection2.shader" />
     <None Include="Assets\Shader\ShadingInWorldSpace\ShadingInWorldSpace.shader" />
+    <None Include="Assets\Shader\BasicTexturing\alphadiscard.shader" />
     <None Include="Assets\Shader\My First Shader.shader" />
     <None Include="Assets\Shader\Transparency\AlphaBlend.shader" />
     <None Include="Assets\Shader\BasicTexturing\GlossyTexture.shader" />
@@ -127,6 +129,7 @@
     <None Include="Assets\Shader\Transparency\SilhousetteEnhancement.shader" />
     <None Include="Assets\Shader\ImageSequenceAnimation.shader" />
     <None Include="Assets\Shader\GasoSi.shader" />
+    <None Include="Assets\Shader\BasicTexturing\SemiP.shader" />
     <None Include="Assets\Shader\Wave.shader" />
     <None Include="Assets\Shader\Common\BumpedSpecular.shader" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
