@@ -38,7 +38,7 @@
 				{
 					float4 texColor = tex2D(_MainTex,input.tex.xy);
 					if (texColor.a > 0.5) {
-						texColor = float4(0.0, 0.0, 1.2, 1.0);
+						texColor = float4(1.0, 0.0, 1.2, 1.0);
 					}
 					else {
 						texColor = float4(0.0, 0.0, 1.0, 0.5);

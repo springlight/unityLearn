@@ -130,6 +130,7 @@
     <None Include="Assets\Shader\ImageSequenceAnimation.shader" />
     <None Include="Assets\Shader\GasoSi.shader" />
     <None Include="Assets\Shader\BasicTexturing\SemiP.shader" />
+    <None Include="Assets\Shader\BasicTexturing\LayersofTextures.shader" />
     <None Include="Assets\Shader\Wave.shader" />
     <None Include="Assets\Shader\Common\BumpedSpecular.shader" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
