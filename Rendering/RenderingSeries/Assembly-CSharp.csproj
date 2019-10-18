@@ -83,6 +83,7 @@
     <None Include="Assets\Shaders\My First Shader.shader" />
     <None Include="Assets\Shader\Lighting\diffuselighting.shader" />
     <None Include="Assets\Shader\MyAlphaTest.shader" />
+    <None Include="Assets\Shader\Texture3D\NormalMapWorldSpace.shader" />
     <None Include="Assets\Shader\MoreLights.shader" />
     <None Include="Assets\Shader\NormalMapTangentSpace.shader" />
     <None Include="Assets\Shader\Shadow.shader" />
@@ -134,6 +135,7 @@
     <None Include="Assets\Shader\Wave.shader" />
     <None Include="Assets\Shader\Common\BumpedSpecular.shader" />
     <None Include="Assets\Shaders\Textured With Detail.shader" />
+    <None Include="Assets\Shader\Texture3D\NormalMapTangentSpace.shader" />
     <None Include="Assets\Shader\Lighting\perpixellighting.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/Rendering/RenderingSeries/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
