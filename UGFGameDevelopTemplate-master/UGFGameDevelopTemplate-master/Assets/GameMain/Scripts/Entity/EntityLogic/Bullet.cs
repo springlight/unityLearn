@@ -1,4 +1,5 @@
 ﻿using FlappyBird;
+using GameFramework;
 using GameFramework.Event;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,6 +44,8 @@ public class Bullet : Entity {
         GameEntry.Sound.PlaySound(1);
         other.gameObject.SetActive(false);
         GameEntry.Entity.HideEntity(this);
+        AddScoreEventArgs e = ReferencePool.Acquire<AddScoreEventArgs>();
+        GameEntry.Event.Fire(this, e.Fill(10));
     }
 
 }

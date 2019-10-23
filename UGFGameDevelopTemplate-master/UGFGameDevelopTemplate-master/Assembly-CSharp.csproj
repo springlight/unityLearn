@@ -91,7 +91,10 @@
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Bullet.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Entity.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Pipe.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Event\AddScoreEventArgs.cs" />
     <Compile Include="Assets\GameMain\Scripts\Event\BirdDeadEventArgs.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Event\RestartEventArgs.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Event\ReturnMenuEvenArgs.cs" />
     <Compile Include="Assets\GameMain\Scripts\Localication\LocalizationExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\Localication\XmlLocalizationHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Network\Base\PacketBase.cs" />
@@ -119,8 +122,10 @@
     <Compile Include="Assets\GameMain\Scripts\UI\Builtin\UGuiGroupHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\Builtin\UIExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\Builtin\UIFormId.cs" />
-    <Compile Include="Assets\GameMain\Scripts\UI\MenuForm.cs" />
-    <Compile Include="Assets\GameMain\Scripts\UI\SettingForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\Customs\GameOverForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\Customs\MenuForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\Customs\ScoreForm.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\Customs\SettingForm.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\AssetUtility.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\LitJsonHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\WebUtility.cs" />

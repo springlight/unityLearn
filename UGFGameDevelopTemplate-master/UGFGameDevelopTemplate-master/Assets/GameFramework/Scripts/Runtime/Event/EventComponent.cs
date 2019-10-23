@@ -21,6 +21,11 @@ namespace UnityGameFramework.Runtime
     {
         private IEventManager m_EventManager = null;
 
+        public void Fire(object referencePool)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 获取事件数量。
         /// </summary>
