@@ -81,12 +81,17 @@
     <Compile Include="Assets\GameMain\Scripts\Definiton\DataStruct\VersionInfo.cs" />
     <Compile Include="Assets\GameMain\Scripts\Definiton\Enum\QualityLevelType.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityData\BgData.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Entity\EntityData\BirdData.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Entity\EntityData\BulletData.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityData\EntityData.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityData\PipeData.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Bg.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Brid.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Bullet.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Entity.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityLogic\Pipe.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Event\BirdDeadEventArgs.cs" />
     <Compile Include="Assets\GameMain\Scripts\Localication\LocalizationExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\Localication\XmlLocalizationHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Network\Base\PacketBase.cs" />
@@ -136,10 +141,10 @@
     <None Include="Assets\GameMain\Configs\BuildInfo.txt" />
     <None Include="Assets\GameMain\Configs\AssetBundleEditor.xml" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -337,16 +342,16 @@
       <HintPath>F:/SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="GameFramework">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/GameFramework.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/GameFramework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/LitJson.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/浪子/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

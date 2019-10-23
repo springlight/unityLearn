@@ -65,10 +65,10 @@
     <Compile Include="Assets\GameMain\Scripts\Editor\ProjectBuildEventHandler.cs" />
     <Compile Include="Assets\GameMain\Scripts\Editor\ProjectSaver.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>F:/SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -311,16 +311,16 @@
       <HintPath>F:/SoftInstall/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="GameFramework">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/GameFramework.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/GameFramework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/LitJson.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>D:/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
+      <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/浪子/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
