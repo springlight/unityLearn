@@ -103,7 +103,10 @@ public class FsmState<T> where T:class
     {
         m_EvtHandlers.Clear();
     }
+    //protected void ChangeState(FsmState<T> state)
+    //{
 
+    //}
     protected void ChangeState<TState>(Fsm<T> fsm) where TState : FsmState<T>
     {
         ChangeState(fsm, typeof(TState));

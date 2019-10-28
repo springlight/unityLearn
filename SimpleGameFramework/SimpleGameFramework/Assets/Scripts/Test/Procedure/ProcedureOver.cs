@@ -9,7 +9,8 @@ public class ProcedureOver : ProcedureBase {
         base.OnUpdate(fsm, elapseSec, realElapseSec);
         if (Input.GetMouseButtonDown(0))
         {
-            ChangeState<ProcedureStart>(fsm);
+            fsm.ChangeState(typeof(ProcedureStart));
+          //  ChangeState<ProcedureStart>(fsm);
         }
 
     }

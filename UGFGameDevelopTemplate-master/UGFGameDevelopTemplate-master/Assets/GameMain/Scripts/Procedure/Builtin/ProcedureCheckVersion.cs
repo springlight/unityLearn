@@ -26,7 +26,7 @@ namespace FlappyBird
             GameEntry.Event.Subscribe(ResourceInitCompleteEventArgs.EventId, OnResourceInitComplete);
             //TODO：根据游戏类型选择检查版本信息还是直接初始化资源
             //RequestVersion();
-            //GameEntry.Resource.InitResources();
+            GameEntry.Resource.InitResources();
 
         }
 

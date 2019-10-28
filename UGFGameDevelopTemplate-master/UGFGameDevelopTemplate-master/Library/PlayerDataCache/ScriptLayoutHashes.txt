@@ -1,0 +1,7 @@
+Android
+PlayerPath?
+C:/Work/study/unity/UGFGameDevelopTemplate-master/AssetBundle/Working/android/scenes
+SceneListBegin?
+Assets/GameMain/Scenes/Menu.unity
+Assets/GameMain/Scenes/Main.unity
+SceneListEnd?

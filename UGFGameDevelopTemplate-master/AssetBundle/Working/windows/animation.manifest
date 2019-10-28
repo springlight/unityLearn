@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 3843190885
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c810b2a897ffa4a4c1875a2a04ae9ef5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 18840b85155b5e5427452f1a17c94f75
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameMain/Animation/bird_0.controller
+- Assets/GameMain/Animation/fly.anim
+Dependencies:
+- C:/Work/study/unity/UGFGameDevelopTemplate-master/AssetBundle/Working/windows/textures

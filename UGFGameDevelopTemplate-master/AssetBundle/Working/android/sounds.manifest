@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3155521512
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0909edb928b7945d172e4f64e52f7163
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameMain/Sounds/Dead.wav
+- Assets/GameMain/Sounds/Fly.wav
+- Assets/GameMain/Sounds/Hurt.wav
+Dependencies: []

@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
+using GameEntry = FlappyBird.GameEntry;
 
 public class ProcedureMain : ProcedureBase
 {

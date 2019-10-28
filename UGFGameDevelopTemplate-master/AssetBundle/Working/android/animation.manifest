@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1951173530
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d23363e387eea37aa46cd551a758b3c4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 18840b85155b5e5427452f1a17c94f75
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameMain/Animation/bird_0.controller
+- Assets/GameMain/Animation/fly.anim
+Dependencies:
+- C:/Work/study/unity/UGFGameDevelopTemplate-master/AssetBundle/Working/android/textures

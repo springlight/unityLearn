@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <BuildReport>
+    <Summary>
+      <ProductName>UGFGameDevelopTemplate</ProductName>
+      <CompanyName>DefaultCompany</CompanyName>
+      <GameIdentifier>com.Company.ProductName</GameIdentifier>
+      <ApplicableGameVersion>0.1</ApplicableGameVersion>
+      <InternalResourceVersion>0</InternalResourceVersion>
+      <UnityVersion>2018.1.0f2</UnityVersion>
+      <WindowsSelected>True</WindowsSelected>
+      <MacOSXSelected>True</MacOSXSelected>
+      <IOSSelected>True</IOSSelected>
+      <AndroidSelected>True</AndroidSelected>
+      <WindowsStoreSelected>True</WindowsStoreSelected>
+      <ZipSelected>True</ZipSelected>
+      <RecordScatteredDependencyAssetsSelected>False</RecordScatteredDependencyAssetsSelected>
+      <BuildAssetBundleOptions>272</BuildAssetBundleOptions>
+    </Summary>
+    <AssetBundles Count="10">
+      <AssetBundle Name="animation" LoadType="0" Packed="True">
+        <Assets Count="2">
+          <Asset Guid="7ed67c295dfff8148b248eb76e7402d2" Name="Assets/GameMain/Animation/fly.anim" Length="2036" HashCode="1429290883">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/GameMain/Textures/bird.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="eea25db1d8b675b4683b366f1fb7c383" Name="Assets/GameMain/Animation/bird_0.controller" Length="1908" HashCode="1482157112">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/GameMain/Animation/fly.anim" />
+            </DependencyAssets>
+          </Asset>
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="10345" HashCode="-616590455" ZipLength="8106" ZipHashCode="1051415945" />
+          <Android Length="10345" HashCode="-1999794729" ZipLength="8107" ZipHashCode="1056545525" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="configs" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="c50012f79cd3f8844a45eef7bd66d58d" Name="Assets/GameMain/Configs/DefaultConfig.txt" Length="110" HashCode="-1809668223" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="1230" HashCode="-1142271518" ZipLength="1043" ZipHashCode="-1365382433" />
+          <Android Length="1230" HashCode="1908572661" ZipLength="1043" ZipHashCode="-1027275014" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="datatables" LoadType="0" Packed="True">
+        <Assets Count="6">
+          <Asset Guid="36029cc8c02c43c4e96db70e5e88250a" Name="Assets/GameMain/DataTables/UIForm.txt" Length="446" HashCode="-320510647" />
+          <Asset Guid="546e2733144f0c840b96f13f68f739e4" Name="Assets/GameMain/DataTables/Music.txt" Length="163" HashCode="-1940539806" />
+          <Asset Guid="96c001f5f5b854d45b6e2367abbc5433" Name="Assets/GameMain/DataTables/Sound.txt" Length="461" HashCode="-744490827" />
+          <Asset Guid="9d81433c0a3ec3c48b9c9dfe18bc14fe" Name="Assets/GameMain/DataTables/Scene.txt" Length="205" HashCode="-376735084" />
+          <Asset Guid="bbe2caeb7d1de7d4cbf65a2d7007759a" Name="Assets/GameMain/DataTables/Entity.txt" Length="180" HashCode="-1982238638" />
+          <Asset Guid="f76e3b650bbdc45478114df1c26feabe" Name="Assets/GameMain/DataTables/UISound.txt" Length="229" HashCode="1060154455" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="2284" HashCode="1057037069" ZipLength="1997" ZipHashCode="-949696503" />
+          <Android Length="2284" HashCode="-1754177583" ZipLength="1997" ZipHashCode="2130491613" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="entities" LoadType="0" Packed="True">
+        <Assets Count="4">
+          <Asset Guid="0a4958537c18fba48a704b4337ec24b3" Name="Assets/GameMain/Entities/Pipe.prefab" Length="6618" HashCode="-1618690074">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/GameMain/Textures/pipe.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="66d2eeb3166487c459db6df2903e393d" Name="Assets/GameMain/Entities/Bg.prefab" Length="15052" HashCode="-1400824175">
+            <DependencyAssets Count="1">
+              <DependencyAsset Name="Assets/GameMain/Textures/back.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="db6953c3dff46e54fbf6f3f6db7f739c" Name="Assets/GameMain/Entities/Bird.prefab" Length="4162" HashCode="2118847740">
+            <DependencyAssets Count="2">
+              <DependencyAsset Name="Assets/GameMain/Animation/bird_0.controller" />
+              <DependencyAsset Name="Assets/GameMain/Textures/bird.png" />
+            </DependencyAssets>
+          </Asset>
+          <Asset Guid="df00c77001aa33f4a8eb76cccdf95376" Name="Assets/GameMain/Entities/Bullet.prefab" Length="3557" HashCode="-653662982" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="82773" HashCode="1704924444" ZipLength="71575" ZipHashCode="1198444903" />
+          <Android Length="83337" HashCode="283999469" ZipLength="72187" ZipHashCode="491940787" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="music" LoadType="0" Packed="True">
+        <Assets Count="2">
+          <Asset Guid="05f8198950854ff45a21fd5fb3796317" Name="Assets/GameMain/Music/Main.mp3" Length="14438954" HashCode="625875635" />
+          <Asset Guid="579307727c492364d813a2607eb85e3a" Name="Assets/GameMain/Music/Menu.mp3" Length="2399112" HashCode="-573272730" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="4276271" HashCode="595807901" ZipLength="4264667" ZipHashCode="1662935175" />
+          <Android Length="4276271" HashCode="1256864703" ZipLength="4264667" ZipHashCode="1526905936" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="scenes" LoadType="0" Packed="True">
+        <Assets Count="2">
+          <Asset Guid="4c07ab7bc02ec5940b9fdcc752e5ecfa" Name="Assets/GameMain/Scenes/Main.unity" Length="6760" HashCode="1428500736" />
+          <Asset Guid="a451fca889eb072468b6043c33ef5f69" Name="Assets/GameMain/Scenes/Menu.unity" Length="6767" HashCode="-1465411932" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="188919" HashCode="5931708" ZipLength="166304" ZipHashCode="-876779436" />
+          <Android Length="61882" HashCode="-1805673879" ZipLength="37222" ZipHashCode="-776862793" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="sounds" LoadType="0" Packed="True">
+        <Assets Count="3">
+          <Asset Guid="7a5c2a62f0a10864b887e9a5398c1e92" Name="Assets/GameMain/Sounds/Dead.wav" Length="18942" HashCode="678543961" />
+          <Asset Guid="8694d2ffaf9a5b24fb0333051dd1f6cb" Name="Assets/GameMain/Sounds/Hurt.wav" Length="13697" HashCode="-383946334" />
+          <Asset Guid="f67ef2e36a05224489345a1cc1afe822" Name="Assets/GameMain/Sounds/Fly.wav" Length="7728" HashCode="1777580317" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="22573" HashCode="-1198353171" ZipLength="22378" ZipHashCode="1898574335" />
+          <Android Length="22573" HashCode="-27938169" ZipLength="22378" ZipHashCode="-1080568488" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="textures" LoadType="0" Packed="True">
+        <Assets Count="3">
+          <Asset Guid="4d670eda127ad3a488537da4eb73bdb8" Name="Assets/GameMain/Textures/back.png" Length="13407" HashCode="1910173704" />
+          <Asset Guid="9d01451f7055cad4ca7934347e00ca51" Name="Assets/GameMain/Textures/bird.png" Length="12443" HashCode="567228321" />
+          <Asset Guid="af22a8be4f65b0b48ad41bd1e82413c8" Name="Assets/GameMain/Textures/pipe.png" Length="13607" HashCode="584605791" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="46421" HashCode="-1306347152" ZipLength="33830" ZipHashCode="451022173" />
+          <Android Length="46862" HashCode="-1031910183" ZipLength="34341" ZipHashCode="1875735284" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="ui/uiforms" LoadType="0" Packed="True">
+        <Assets Count="4">
+          <Asset Guid="a9694b6f6b4d0ac4a9ebb70de8cff43d" Name="Assets/GameMain/UI/UIForms/MenuForm.prefab" Length="24147" HashCode="867462535" />
+          <Asset Guid="c7d685fcae3a4d345bc0e0db6c44f7fb" Name="Assets/GameMain/UI/UIForms/GameOverForm.prefab" Length="17066" HashCode="-458606498" />
+          <Asset Guid="d179a52704b07eb49a434885081aef09" Name="Assets/GameMain/UI/UIForms/ScoreForm.prefab" Length="3934" HashCode="1691829938" />
+          <Asset Guid="dad8c93efc0333e4eadc26bd30279557" Name="Assets/GameMain/UI/UIForms/SettingForm.prefab" Length="36324" HashCode="1571173730" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="131138" HashCode="353909384" ZipLength="113628" ZipHashCode="706718173" />
+          <Android Length="134452" HashCode="226409689" ZipLength="117130" ZipHashCode="-345285710" />
+        </Codes>
+      </AssetBundle>
+      <AssetBundle Name="ui/uisounds" LoadType="0" Packed="True">
+        <Assets Count="1">
+          <Asset Guid="09539d6de4790db49b40c7e50568c6a0" Name="Assets/GameMain/UI/UISounds/Click.wav" Length="13235" HashCode="992381744" />
+        </Assets>
+        <Codes>
+          <StandaloneWindows Length="6429" HashCode="416226958" ZipLength="6027" ZipHashCode="-1312268999" />
+          <Android Length="6429" HashCode="775672681" ZipLength="6028" ZipHashCode="1808160014" />
+        </Codes>
+      </AssetBundle>
+    </AssetBundles>
+  </BuildReport>
+</UnityGameFramework>

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 355561792
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3b7370e118a439bf6f3795a60bbfbfd7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b474380d27eb4bc856799e9c585c4864
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameMain/Textures/back.png
+- Assets/GameMain/Textures/pipe.png
+- Assets/GameMain/Textures/bird.png
+Dependencies: []

@@ -129,6 +129,7 @@
     <Compile Include="Assets\GameMain\Scripts\Utility\AssetUtility.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\LitJsonHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\WebUtility.cs" />
+    <None Include="Assets\GameMain\Configs\AssetBundleBuilder.xml" />
     <None Include="Assets\GameMain\Localization\English\Dictionaries\Default.xml" />
     <None Include="Assets\GameMain\Configs\BuildSettings.xml" />
     <None Include="Assets\GameFramework\Libraries\link.xml" />
@@ -144,6 +145,7 @@
     <None Include="Assets\GameMain\DataTables\Entity.txt" />
     <None Include="Assets\GameMain\DataTables\Scene.txt" />
     <None Include="Assets\GameMain\Configs\BuildInfo.txt" />
+    <None Include="Assets\GameMain\Configs\AssetBundleCollection.xml" />
     <None Include="Assets\GameMain\Configs\AssetBundleEditor.xml" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Work/study/unity/UGFGameDevelopTemplate-master/UGFGameDevelopTemplate-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

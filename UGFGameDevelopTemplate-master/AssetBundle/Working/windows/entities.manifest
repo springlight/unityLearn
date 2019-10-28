@@ -1,0 +1,41 @@
+ManifestFileVersion: 0
+CRC: 554137485
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dd90d067abcfb5f11d6744bdb45283f8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 84c2a0422506083f3a215351e34d29fa
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/GameMain/Entities/Bullet.prefab
+- Assets/GameMain/Entities/Pipe.prefab
+- Assets/GameMain/Entities/Bg.prefab
+- Assets/GameMain/Entities/Bird.prefab
+Dependencies:
+- C:/Work/study/unity/UGFGameDevelopTemplate-master/AssetBundle/Working/windows/animation
+- C:/Work/study/unity/UGFGameDevelopTemplate-master/AssetBundle/Working/windows/textures
